@@ -1,5 +1,5 @@
 #include <iostream>
-#include "hello-world/HelloWorld.h"
+#include "helloworld/HelloWorld.h"
 
 int main() {
 
