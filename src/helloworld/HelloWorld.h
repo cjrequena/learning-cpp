@@ -5,17 +5,9 @@
 #ifndef CPP_EXERCISES_HELLOWORLD_H
 #define CPP_EXERCISES_HELLOWORLD_H
 
-
 class HelloWorld {
-
-    private:
-    //
-    protected:
-    //
-    public:
-    //
-        void helloWorld(); //Hello world method
+ public:
+  void helloWorld(); //Hello world method
 };
-
 
 #endif //CPP_EXERCISES_HELLOWORLD_H

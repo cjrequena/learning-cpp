@@ -1,11 +1,11 @@
 #include <iostream>
 #include "helloworld/HelloWorld.h"
 
-int main() {
+int main ()
+{
+  //Hello World
+  HelloWorld helloWorldObj;
+  helloWorldObj.helloWorld ();
 
-    //Hello World
-    HelloWorld helloWorldObj;
-    helloWorldObj.helloWorld();
-
-    return 0;
+  return 0;
 }

@@ -6,5 +6,5 @@
 #include "HelloWorld.h"
 
 void HelloWorld::helloWorld() {
-    std::cout << "Hello, World!" << std::endl;
+  std::cout << "Hello, World!" << std::endl;
 }
