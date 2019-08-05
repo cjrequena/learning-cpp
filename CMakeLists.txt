@@ -12,4 +12,4 @@ include_directories(test)
 add_executable(
         cpp_exercises
         src/Main.cpp
-        src/helloworld/HelloWorld.cpp src/helloworld/HelloWorld.h)
+        src/helloworld/HelloWorld.cpp src/helloworld/HelloWorld.h src/datatypes/DataTypes.cpp src/datatypes/DataTypes.h)
