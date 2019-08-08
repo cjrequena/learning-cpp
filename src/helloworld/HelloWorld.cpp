@@ -6,5 +6,9 @@
 #include "HelloWorld.h"
 
 void HelloWorld::helloWorld() {
-  std::cout << "Hello, World!" << std::endl;
+    printf("\n");
+    printf("================================\n");
+    printf("print Hello, World!\n");
+    printf("================================\n");
+    std::cout << "Hello, World!" << std::endl;
 }

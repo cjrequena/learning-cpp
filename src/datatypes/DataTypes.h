@@ -9,6 +9,9 @@ class DataTypes {
  public:
   void printDataTypes();
   void printIntegerRepresentations();
+  void printEnumerationConstants();
+  void printDeclarations();
+  void arithmeticOperatorsExample();
 };
 
 #endif //CPP_EXERCISES_SRC_DATATYPES_DATATYPES_H_

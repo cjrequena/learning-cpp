@@ -12,6 +12,9 @@ int main ()
   DataTypes dataTypes;
   dataTypes.printDataTypes();
   dataTypes.printIntegerRepresentations();
+  dataTypes.printEnumerationConstants();
+  dataTypes.printDeclarations();
+  dataTypes.arithmeticOperatorsExample();
 
   return 0;
 }
