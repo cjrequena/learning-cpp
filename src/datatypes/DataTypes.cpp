@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 #include <iostream>
-#include <bits/shared_ptr.h>
 #include "DataTypes.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
