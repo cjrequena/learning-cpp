@@ -1,6 +1,6 @@
 #include <iostream>
-#include <datatypes/DataTypes.h>
-#include "helloworld/HelloWorld.h"
+#include <datatypes/DataTypes.hpp>
+#include "helloworld/HelloWorld.hpp"
 
 int main ()
 {

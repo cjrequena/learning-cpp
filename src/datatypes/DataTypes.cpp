@@ -6,12 +6,13 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "DataTypes.h"
+#include <bits/shared_ptr.h>
+#include "DataTypes.hpp"
+using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
 
-/*
- *  Here is a small C program that will print out the size of some basic C types on your machine.
- */
+
+// Here is a small C program that will print out the size of some basic C types on your machine.
 void DataTypes::printDataTypes() {
     printf("\n");
     printf("================================\n");
@@ -27,9 +28,8 @@ void DataTypes::printDataTypes() {
     printf("a long double is %ld bytes\n", sizeof(long double));
 }
 
-/*
- * Here is some code to show how to print integers in various representations.
- */
+
+// Here is some code to show how to print integers in various representations.
 void DataTypes::printIntegerRepresentations() {
     printf("\n");
     printf("================================\n");
@@ -43,11 +43,9 @@ void DataTypes::printIntegerRepresentations() {
     printf("0x12f is hexadecimal for %d\n", 0x12f);
 }
 
-/*
-* Enumeration Constants:
-* An enumeration constant is a list of constant integer values, that you can assign to arbitrary labels. They provide a
-* convenient way to associate constant values with names. For example you could store the months of the year like this:
-*/
+//Enumeration Constants:
+//An enumeration constant is a list of constant integer values, that you can assign to arbitrary labels. They provide a
+//convenient way to associate constant values with names. For example you could store the months of the year like this:
 void DataTypes::printEnumerationConstants() {
     printf("\n");
     printf("================================\n");
@@ -94,11 +92,10 @@ void DataTypes::printEnumerationConstants() {
     printf("DEC %d\n", theMonth);
 }
 
-/*
- * Unlike in languages like Python, R, Octave/Matlab, etc, which are dynamically typed languages, the C language is a
- * statically typed language. From a practical point of view, this means in C, we have to declare, up front, the type of
- * every variable we use. In languages like Python we can do crazy stuff like this:
- */
+
+// Unlike in languages like Python, R, Octave/Matlab, etc, which are dynamically typed languages, the C language is a
+// statically typed language. From a practical point of view, this means in C, we have to declare, up front, the type of
+// every variable we use. In languages like Python we can do crazy stuff like this:
 void DataTypes::printDeclarations() {
     printf("\n");
     printf("================================\n");
@@ -112,18 +109,15 @@ void DataTypes::printDeclarations() {
 }
 
 
-/*
- * Expressions:
- * Like in any other programming language, in C, there are a number of arithmetic relational and logical operators we can
- * use to write expressions that are made up of simpler basic types.
- */
 
-/*
- * Arithmetic Operators:
- * The following binary arithmetic operators can be used in C: +, -, *, / and the modulus operator %. When writing arithmetic
- * expressions we must always be aware of operator precedence, which is the order in which operators are applied when evaluating
- * an expression.
- */
+//Expressions:
+//Like in any other programming language, in C, there are a number of arithmetic relational and logical operators we can
+//use to write expressions that are made up of simpler basic types.
+
+// Arithmetic Operators:
+// The following binary arithmetic operators can be used in C: +, -, *, / and the modulus operator %. When writing arithmetic
+// expressions we must always be aware of operator precedence, which is the order in which operators are applied when evaluating
+// an expression.
 void::DataTypes::arithmeticOperatorsExample() {
     printf("\n");
     printf("================================\n");
