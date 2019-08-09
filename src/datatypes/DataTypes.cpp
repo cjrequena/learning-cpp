@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <iostream>
 #include "DataTypes.hpp"
+
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
 
@@ -24,7 +25,7 @@ void DataTypes::printDataTypes() {
     cout << "an double is " << sizeof(double) << " bytes" << endl;
     cout << "a short int is " << sizeof(short int) << " bytes" << endl;
     cout << "an long int is " << sizeof(long int) << " bytes" << endl;
-    cout << "a  long double is " << sizeof( long double) << " bytes" << endl;
+    cout << "a  long double is " << sizeof(long double) << " bytes" << endl;
 }
 
 // Constants:
@@ -42,12 +43,24 @@ void DataTypes::printIntegerRepresentations() {
     cout << "print integers in various representations." << endl;
     cout << "================================" << endl;
 
-    printf("1984 in decimal is %d\n", 1984);
-    printf("1984 in octal is 0%o\n", 1984);
-    printf("1984 in hexadecimal is 0x%x\n", 1984);
-    printf("0123 is octal for %d\n", 0123);
-    printf("0x12f is hexadecimal for %d\n", 0x12f);
+    cout << "1984 in decimal is " << std::dec << 1984 << endl;
+    cout << "1984 in octal is 0" << std::oct << 1984 << endl;
+    cout << "1984 in hexadecimal is 0" << std::hex << 1984 << endl;
+    cout << "0123 is octal for " << std::dec << 0123 << endl;
+    cout << "0x12f is hexadecimal for " << std::dec << 0x12f << endl;
 }
+
+
+//Character Constants
+//A character constant is written between single quotes, for example, 'x'. Characters in C are represented using integer
+// values, from the ASCII character set. ASCII codes range between 0 and 255. The upper-case alphabet starts at 65 (A)
+// and ends at 90 (Z); the lowercase alphabet starts at 97 (a) and ends at 122 (z). Other symbols such as ç
+// (, !, tab, carriage return, etc, are also represented in the ASCII table.
+
+//An important character constant to know about is the constant '\0' which represents the character with value zero,
+// sometimes called the NULL character. We will see later when we talk about string handling in C that '\0' is used to
+// terminate variable-length strings.
+
 
 //Enumeration Constants:
 //An enumeration constant is a list of constant integer values, that you can assign to arbitrary labels. They provide a
@@ -113,7 +126,7 @@ void DataTypes::printDeclarations() {
     double b = 50.2;
     double c = 100.0;
     double d[] = {a, b, c};
-    printf("a=%.3f, b=%.3f, c=%.3f, d=[%.3f, %.3f, %.3f]\n",a, b, c, d[0], d[1], d[2]);
+    printf("a=%.3f, b=%.3f, c=%.3f, d=[%.3f, %.3f, %.3f]\n", a, b, c, d[0], d[1], d[2]);
 }
 
 
@@ -126,14 +139,14 @@ void DataTypes::printDeclarations() {
 // The following binary arithmetic operators can be used in C: +, -, *, / and the modulus operator %. When writing arithmetic
 // expressions we must always be aware of operator precedence, which is the order in which operators are applied when evaluating
 // an expression.
-void::DataTypes::arithmeticOperatorsExample() {
-    
+void ::DataTypes::arithmeticOperatorsExample() {
+
     cout << "" << endl;
     cout << "================================" << endl;
     cout << "arithmetic operators example" << endl;
     cout << "================================" << endl;
 
-    int a=100, b=2, c=25, d=4;
+    int a = 100, b = 2, c = 25, d = 4;
     int result1, result2, result3;
     result1 = a * b + c * d;
     result2 = (a * b) + (c * d);
