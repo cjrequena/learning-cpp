@@ -13,27 +13,34 @@ using namespace std; // this is a using directive telling the compiler to check 
 
 // Here is a small C program that will print out the size of some basic C types on your machine.
 void DataTypes::printDataTypes() {
-    printf("\n");
-    printf("================================\n");
-    printf("print out the size of some basic C types on your machine\n");
-    printf("================================\n");
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "print out the size of some basic C types on your machine" << endl;
+    cout << "================================" << endl;
 
-    printf("a char is %ld bytes\n", sizeof(char));
-    printf("an int is %ld bytes\n", sizeof(int));
-    printf("an float is %ld bytes\n", sizeof(float));
-    printf("a double is %ld bytes\n", sizeof(double));
-    printf("a short int is %ld bytes\n", sizeof(short int));
-    printf("a long int is %ld bytes\n", sizeof(long int));
-    printf("a long double is %ld bytes\n", sizeof(long double));
+    cout << "a char is " << sizeof(char) << " bytes" << endl;
+    cout << "an int is " << sizeof(int) << " bytes" << endl;
+    cout << "a float is " << sizeof(float) << " bytes" << endl;
+    cout << "an double is " << sizeof(double) << " bytes" << endl;
+    cout << "a short int is " << sizeof(short int) << " bytes" << endl;
+    cout << "an long int is " << sizeof(long int) << " bytes" << endl;
+    cout << "a  long double is " << sizeof( long double) << " bytes" << endl;
 }
 
+// Constants:
+// Constants are values that that do not change after they have been defined.
+
+// Numeric Constants
+//An example of an int constant is the number 1234. An example of a floating-point constant (by default typed as a double)
+// is 123.4 and 1e-2. We can write numbers in octal or hexadecimal instead of decimal: octal by using a leading zero (0)
+// and hexadecimal by using a leading zero-x (0x). Decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hexadecimal.
 
 // Here is some code to show how to print integers in various representations.
 void DataTypes::printIntegerRepresentations() {
-    printf("\n");
-    printf("================================\n");
-    printf("print integers in various representations.\n");
-    printf("================================\n");
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "print integers in various representations." << endl;
+    cout << "================================" << endl;
 
     printf("1984 in decimal is %d\n", 1984);
     printf("1984 in octal is 0%o\n", 1984);
@@ -46,10 +53,10 @@ void DataTypes::printIntegerRepresentations() {
 //An enumeration constant is a list of constant integer values, that you can assign to arbitrary labels. They provide a
 //convenient way to associate constant values with names. For example you could store the months of the year like this:
 void DataTypes::printEnumerationConstants() {
-    printf("\n");
-    printf("================================\n");
-    printf("print enumeration constants\n");
-    printf("================================\n");
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "print enumeration constants" << endl;
+    cout << "================================" << endl;
 
     enum months {
         JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
@@ -96,10 +103,12 @@ void DataTypes::printEnumerationConstants() {
 // statically typed language. From a practical point of view, this means in C, we have to declare, up front, the type of
 // every variable we use. In languages like Python we can do crazy stuff like this:
 void DataTypes::printDeclarations() {
-    printf("\n");
-    printf("================================\n");
-    printf("print declarations\n");
-    printf("================================\n");
+
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "print declarations" << endl;
+    cout << "================================" << endl;
+
     double a = 123.456;
     double b = 50.2;
     double c = 100.0;
@@ -118,10 +127,12 @@ void DataTypes::printDeclarations() {
 // expressions we must always be aware of operator precedence, which is the order in which operators are applied when evaluating
 // an expression.
 void::DataTypes::arithmeticOperatorsExample() {
-    printf("\n");
-    printf("================================\n");
-    printf("arithmetic operators example\n");
-    printf("================================\n");
+    
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "arithmetic operators example" << endl;
+    cout << "================================" << endl;
+
     int a=100, b=2, c=25, d=4;
     int result1, result2, result3;
     result1 = a * b + c * d;
