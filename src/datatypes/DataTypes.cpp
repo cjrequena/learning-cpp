@@ -177,5 +177,23 @@ void DataTypes::incrementAndDecrementVariableExample() {
     printf("a=%d, b=%d\n", a, b);
     a++;
     b--;
-    printf("a=%d, b=%d\n", a, b);
+    printf("a=%d, b=%d\n\n", a, b);
+
+    // A note of caution, you can also use these two operators in a different way, by putting the operator before the
+    // operand, e.g. ++a and --b. When the operand is used before the operand this is called a prefix operator, and when
+    // it is used after the operand it is called a postfix operator. When using ++ and -- as a prefix operator,
+    // the increment (or decrement) happens before its value is used. As postfix operators, the increment (or decrement)
+    // happens after its value has been used. Here is a concrete example:
+    int n, x;
+    n = 3;
+    x = 0;
+    printf("n=%d, x=%d\n", n, x);
+    x = n++;
+    printf("n=%d, x=%d\n\n", n, x);
+
+    n = 3;
+    x = 0;
+    printf("n=%d, x=%d\n", n, x);
+    x = ++n;
+    printf("n=%d, x=%d\n", n, x);
 }
