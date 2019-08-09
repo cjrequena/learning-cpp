@@ -12,6 +12,7 @@ class DataTypes {
   void printEnumerationConstants();
   void printDeclarations();
   void arithmeticOperatorsExample();
+  void incrementAndDecrementVariableExample();
 };
 
 #endif //CPP_EXERCISES_SRC_DATATYPES_DATATYPES_H_

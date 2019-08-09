@@ -56,10 +56,16 @@ void DataTypes::printIntegerRepresentations() {
 // values, from the ASCII character set. ASCII codes range between 0 and 255. The upper-case alphabet starts at 65 (A)
 // and ends at 90 (Z); the lowercase alphabet starts at 97 (a) and ends at 122 (z). Other symbols such as ç
 // (, !, tab, carriage return, etc, are also represented in the ASCII table.
-
 //An important character constant to know about is the constant '\0' which represents the character with value zero,
 // sometimes called the NULL character. We will see later when we talk about string handling in C that '\0' is used to
 // terminate variable-length strings.
+
+
+//String Constants
+//String constants can be specified using a sequence of zero or more characters enclosed within double quotes, e.g. "C is fun".
+// A string constant is technically an array of characters that is terminated by a null character '\0' at the end.
+// This means that the storage required to represent a string of length n is actually n+1. Thus we can store strings of
+// arbitrary length in memory as long as they are terminated by a null character (so we know when they stop).
 
 
 //Enumeration Constants:
@@ -129,8 +135,6 @@ void DataTypes::printDeclarations() {
     printf("a=%.3f, b=%.3f, c=%.3f, d=[%.3f, %.3f, %.3f]\n", a, b, c, d[0], d[1], d[2]);
 }
 
-
-
 //Expressions:
 //Like in any other programming language, in C, there are a number of arithmetic relational and logical operators we can
 //use to write expressions that are made up of simpler basic types.
@@ -152,4 +156,26 @@ void ::DataTypes::arithmeticOperatorsExample() {
     result2 = (a * b) + (c * d);
     result3 = a * (b + c) * d;
     printf("result1=%d, result2=%d, result3=%d\n", result1, result2, result3);
+}
+
+//Relational and Logical Operators
+//The relational operators are >, >=, < and <=, which all have equal precedence. There are also two equality operators: == and !=.
+//There are two logical operators && (logical AND) and || (logical OR).
+// By default in C, the results of relational and logical operators are evaluated to integer values: 0 for FALSE and 1 for TRUE.
+
+//Increment and Decrement Operators
+//You may come across two unusual-looking operators that may be used as a shorthand for incrementing and decrementing
+// variables. The ++ and -- operators add 1 and subtract 1, respectively, from their operands. For example in the following
+// code snippet, we increment the int variable a and we decrement the int variable b:
+void DataTypes::incrementAndDecrementVariableExample() {
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "increment and decrement variable example" << endl;
+    cout << "================================" << endl;
+    int a = 0;
+    int b = 0;
+    printf("a=%d, b=%d\n", a, b);
+    a++;
+    b--;
+    printf("a=%d, b=%d\n", a, b);
 }
