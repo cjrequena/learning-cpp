@@ -86,3 +86,39 @@ void::ControlFlows::whileLoopExample() {
     printf("%d x 10 = %d\n", number, number*10);
   }
 }
+
+//Do-While Loop
+// There is another version of a while-loop that is essentially the same as a while-loop but it reverses the order of the
+// program_statement and conditional_expression.
+// Unlike for and while loops, which test the loop condition at the top of the loop, the do...while loop checks its condition at the bottom of the loop.
+// A do...while loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.
+// The syntax of a do...while loop in C++ is −
+//do {
+//statement(s);
+//}
+//while( condition );
+//see: https://www.tutorialspoint.com/cplusplus/cpp_do_while_loop.htm
+void::ControlFlows::doWhileExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "do-while loop example" << endl;
+  cout << "================================" << endl;
+  // Local variable declaration:
+  int a = 10;
+  // do loop execution
+  do {
+    cout << "value of a: " << a << endl;
+    a = a + 1;
+  } while( a < 20 );
+  cout << "\n\n" << endl;
+
+  // another do-while loop
+  int number = 0;
+  do {
+    printf("Enter an integer or 999 to stop: ");
+    scanf ("%i", &number);
+    printf("%d x 10 = %d\n", number, number*10);
+  }
+  while (number != 999);
+
+}

@@ -25,6 +25,7 @@ int main ()
   ControlFlows controlFlows;
   controlFlows.forLoopExample ();
   controlFlows.whileLoopExample();
+  controlFlows.doWhileExample();
 
   return 0;
 }
