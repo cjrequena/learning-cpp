@@ -11,7 +11,19 @@
 
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
+DataTypes::DataTypes() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout<<"DataTypes Constructor called."<<endl;
+  cout << "================================" << endl;
+}
 
+DataTypes::~DataTypes() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout<<"DataTypes Destructor called."<<endl;
+  cout << "================================" << endl;
+}
 
 // Here is a small C program that will print out the size of some basic C types on your machine.
 void DataTypes::printDataTypes() {

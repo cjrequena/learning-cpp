@@ -7,10 +7,13 @@
 
 class ControlFlows {
  public:
+  ControlFlows(); // Constructor
+  ~ControlFlows(); //Destructor
   void forLoopExample();
   void whileLoopExample();
   void doWhileLoopExample();
   void nestedLoopExample();
+
 };
 
 #endif //CPP_EXERCISES_CONTROLFLOWS_HPP

@@ -7,6 +7,19 @@
 #include "ControlFlows.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
+ControlFlows::ControlFlows() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout<<"ControlFlows Constructor called."<<endl;
+  cout << "================================" << endl;
+}
+
+ControlFlows::~ControlFlows() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout<<"ControlFlows Destructor called."<<endl;
+  cout << "================================" << endl;
+}
 
 //Loops:
 //One of the most useful properties of progammable computers is that you can ask them to repeat a calculation and/or
@@ -162,4 +175,5 @@ void::ControlFlows::nestedLoopExample() {
     if(j > (i/j)) cout << i << " is prime\n";
   }
 }
+
 

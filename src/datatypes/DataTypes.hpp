@@ -7,6 +7,8 @@
 
 class DataTypes {
  public:
+  DataTypes(); // Constructor
+  ~DataTypes(); //Destructor
   void printDataTypes();
   void printIntegerRepresentations();
   void printEnumerationConstants();
