@@ -135,14 +135,21 @@ void DataTypes::printDeclarations() {
     printf("a=%.3f, b=%.3f, c=%.3f, d=[%.3f, %.3f, %.3f]\n", a, b, c, d[0], d[1], d[2]);
 }
 
-//Expressions:
-//Like in any other programming language, in C, there are a number of arithmetic relational and logical operators we can
-//use to write expressions that are made up of simpler basic types.
+// Expressions:
+// Like in any other programming language, in C, there are a number of arithmetic relational and logical operators we can
+// use to write expressions that are made up of simpler basic types.
 
-// Arithmetic Operators:
-// The following binary arithmetic operators can be used in C: +, -, *, / and the modulus operator %. When writing arithmetic
-// expressions we must always be aware of operator precedence, which is the order in which operators are applied when evaluating
-// an expression.
+// Arithmetic Operators
+// The following binary arithmetic operators can be used in C: +, -, *, / and the modulus operator %. When writing
+// arithmetic expressions we must always be aware of operator precedence, which is the order in which operators are
+// applied when evaluating an expression.
+// For example 4+5*6 evaluates to 34, because the * operator has precedence over the + operator, and so the expression
+// is evaluated as 4 + (5*6), not (4+5)*6. My own strategy to deal with this is to always use brackets to explicitly
+// denote desired precedence in arithmetic expressions. So instead of writing:
+// double q = a*x*x+b*x+c;
+// which is a perfectly accurate expression of the quadratic equation: ax2+bx+c
+// I would rather code it like this:
+// double q = (a*x*x) + (b*x) + c;
 void ::DataTypes::arithmeticOperatorsExample() {
 
     cout << "" << endl;
@@ -196,4 +203,32 @@ void DataTypes::incrementAndDecrementVariableExample() {
     printf("n=%d, x=%d\n", n, x);
     x = ++n;
     printf("n=%d, x=%d\n", n, x);
+}
+
+// Type Conversions
+// There are two kinds of type conversion we need to talk about: automatic or implicit type conversion and explicit type conversion.
+
+//Implicit Type Conversion
+//The operators we have looked at can deal with different types. For example we can apply the addition operator + to an
+// int as well as a double. It is important to understand how operators deal with different types that appear in the same expression.
+// There are rules in C that govern how operators convert different types, to evaluate the results of expressions.
+
+//For example, when a floating-point number is assigned to an integer value in C, the decimal portion of the number gets truncated.
+// On the other hand, when an integer value is assigned to a floating-point variable, the decimal is assumed as .0.
+
+//This sort of implicit or automatic conversion can produce nasty bugs that are difficult to find, especially for example
+// when performing multiplication or division using mixed types, e.g. integer and floating-point values. Here is some example
+// code illustrating some of these effects:
+void::DataTypes::typeConversionsExample() {
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "type conversions example" << endl;
+    cout << "================================" << endl;
+    int a = 2;
+    double b = 3.5;
+    double c = a * b;
+    double d = a / b;
+    int e = a * b;
+    int f = a / b;
+    printf("a=%d, b=%.3f, c=%.3f, d=%.3f, e=%d, f=%d\n",a, b, c, d, e, f);
 }

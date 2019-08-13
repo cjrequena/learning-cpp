@@ -16,5 +16,6 @@ int main ()
   dataTypes.printDeclarations();
   dataTypes.arithmeticOperatorsExample();
   dataTypes.incrementAndDecrementVariableExample();
+  dataTypes.typeConversionsExample();
   return 0;
 }
