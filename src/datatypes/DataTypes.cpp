@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <sstream>
 #include "DataTypes.hpp"
 
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
@@ -231,4 +232,71 @@ void::DataTypes::typeConversionsExample() {
     int e = a * b;
     int f = a / b;
     printf("a=%d, b=%.3f, c=%.3f, d=%.3f, e=%d, f=%d\n",a, b, c, d, e, f);
+}
+
+// Explicit Type Conversion
+// Type Casting: There is a mechanism in C to perform type casting, that is to force an expression to be converted to a
+// particular type of our choosing. We surround the desired type in brackets and place that just before the expression
+// to be coerced. Look at the following example code:
+
+void::DataTypes::typeCastingExample() {
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "type casting example" << endl;
+    cout << "================================" << endl;
+    int a = 2;
+    int b = 3;
+    printf("a / b = %.3f\n", a/b);
+    printf("a / b = %.3f\n", (double) a/b);
+}
+
+// String Conversion Library Functions
+// There are some built-in library functions in C to perform some basic conversions between strings and numeric types.
+// Two useful functions to know about convert ascii strings to numeric types: atoi() (ascii to integer) and atof() (ascii to floating-point).
+// We need to #include the library stdlib.h in order to use these functions.
+// To convert from numeric types to strings things are a bit more difficult. First we have to allocate space in memory to store the string.
+// Then we use the sprintf() built-in function to "print" the numeric type into our string.
+
+// Use C++ standard library std::stringstream
+// Use std::stoi() function from C++ standard library since C++11.
+void::DataTypes::stringConversionExample() {
+    cout << "" << endl;
+    cout << "================================" << endl;
+    cout << "string conversion example" << endl;
+    cout << "================================" << endl;
+
+    // C Way
+    cout << "C Way 1" << endl;
+    char intString[] = "1234";
+    char floatString[] = "328.4";
+    int myInt = atoi(intString);
+    double myDouble = atof(floatString);
+    printf("intString=%s, floatString=%s\n", intString, floatString);
+    printf("myInt=%d, myDouble=%.1f\n\n", myInt, myDouble);
+
+    int a = 2;
+    double b = 3.14;
+    char myString1[64], myString2[64];
+    sprintf(myString1, "%d", a);
+    sprintf(myString2, "%.2f", b);
+    printf("a=%d, b=%.2f\n", a, b);
+    printf("myString1=%s, myString2=%s\n\n", myString1, myString2);
+
+    // C Way
+    cout << "C Way 2" << endl;
+    const char base_string[] = "base_string";
+    const int MAX_BUFFER_SIZE = 1000;
+    char out_string [MAX_BUFFER_SIZE];
+    int number = 123;
+    sprintf(out_string, "%s%d", base_string, number);
+    printf("out_string = %s\n\n", out_string);
+
+    // C++ Way
+    cout << "C++ Way" << endl;
+    int i = 123;
+    std::string out_string2;
+    std::stringstream ss;
+    ss << i;
+    out_string2 = ss.str();
+    cout << "out_string2=" << out_string2 << endl;
 }

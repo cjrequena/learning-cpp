@@ -14,6 +14,8 @@ class DataTypes {
   void arithmeticOperatorsExample();
   void incrementAndDecrementVariableExample();
   void typeConversionsExample();
+  void typeCastingExample();
+  void stringConversionExample();
 };
 
 #endif //CPP_EXERCISES_SRC_DATATYPES_DATATYPES_H_
