@@ -1,4 +1,5 @@
 #include <iostream>
+#include "controlflows/ControlFlows.hpp"
 #include "datatypes/DataTypes.hpp"
 #include "helloworld/HelloWorld.hpp"
 
@@ -19,5 +20,10 @@ int main ()
   dataTypes.typeConversionsExample();
   dataTypes.typeCastingExample();
   dataTypes.stringConversionExample();
+
+  // Control Flows
+  ControlFlows controlFlows;
+  controlFlows.forLoopExample ();
+
   return 0;
 }
