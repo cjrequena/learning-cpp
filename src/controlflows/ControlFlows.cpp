@@ -27,6 +27,8 @@ using namespace std; // this is a using directive telling the compiler to check 
 // of the loop is executed. This is all very abstract, so let's see a concrete example, by coding a loop to implement
 // the cumulative sum as above.
 
+// see: https://www.tutorialspoint.com/cplusplus/cpp_for_loop.htm
+
 void ::ControlFlows::forLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -39,4 +41,48 @@ void ::ControlFlows::forLoopExample() {
     cumsum = cumsum + i;
   }
   printf("the cumulative sum up to 100 is %d\n", cumsum);
+
+  // A most efficient way
+  int n = 1;
+  int p = 100;
+  int x = n * (p * (p + 1)) / 2;
+  printf("%d\n", x);
+
+  int y = (p * (n + p) ) / 2; // Carl Gauss formula
+  printf("%d\n", y);
+}
+
+// While Loop:
+// The while-loop is another looping construct that you might find more appropriate than a for-loop under some circumstances.
+// A while-loop looks like this:
+//while (conditional_expression) {
+//program_statements;
+//}
+// The while-loop will first check the value of the conditional_expression, and if it is not FALSE (i.e. if the expression
+// returns a non-zero (non-FALSE) result, the program_statement (or multiple statements) will be executed once. Afterwards
+// the conditional_expression will be evaluated again, and if it returns a non-zero result, the program_statment (or multiple statements)
+// will be executed again, and so on. The while-loop will stop only when the conditional_expression returns zero.
+// see: https://www.tutorialspoint.com/cplusplus/cpp_while_loop.htm
+
+void::ControlFlows::whileLoopExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "while loop example" << endl;
+  cout << "================================" << endl;
+  // Local variable declaration:
+  int a = 10;
+  // while loop execution
+  while( a < 20 ) {
+    cout << "value of a: " << a << endl;
+    a++;
+  }
+  cout << "\n\n" << endl;
+
+  // another while loop
+  int number = 0;
+  while(number != 999) {
+    printf("Enter an integer or 999 to stop: ");
+    scanf ("%i", &number);
+    printf("%d x 10 = %d\n", number, number*10);
+  }
 }

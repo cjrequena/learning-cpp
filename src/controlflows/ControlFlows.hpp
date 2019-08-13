@@ -8,6 +8,7 @@
 class ControlFlows {
  public:
   void forLoopExample();
+  void whileLoopExample();
 };
 
 #endif //CPP_EXERCISES_CONTROLFLOWS_HPP
