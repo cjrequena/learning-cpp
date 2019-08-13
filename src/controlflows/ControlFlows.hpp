@@ -9,7 +9,8 @@ class ControlFlows {
  public:
   void forLoopExample();
   void whileLoopExample();
-  void doWhileExample();
+  void doWhileLoopExample();
+  void nestedLoopExample();
 };
 
 #endif //CPP_EXERCISES_CONTROLFLOWS_HPP

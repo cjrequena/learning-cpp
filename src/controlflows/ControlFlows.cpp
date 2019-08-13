@@ -98,7 +98,7 @@ void::ControlFlows::whileLoopExample() {
 //}
 //while( condition );
 //see: https://www.tutorialspoint.com/cplusplus/cpp_do_while_loop.htm
-void::ControlFlows::doWhileExample() {
+void::ControlFlows::doWhileLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "do-while loop example" << endl;
@@ -120,5 +120,46 @@ void::ControlFlows::doWhileExample() {
     printf("%d x 10 = %d\n", number, number*10);
   }
   while (number != 999);
-
 }
+
+// Nested loops:
+// A loop can be nested inside of another loop. C++ allows at least 256 levels of nesting.
+
+// The syntax for a nested for loop statement in C++ is as follows −
+//for ( init; condition; increment ) {
+//for ( init; condition; increment ) {
+//statement(s);
+//}
+//statement(s); // you can put more statements.
+//}
+
+//The syntax for a nested while loop statement in C++ is as follows −
+//while(condition) {
+//while(condition) {
+//statement(s);
+//}
+//statement(s); // you can put more statements.
+//}
+
+//The syntax for a nested do...while loop statement in C++ is as follows −
+//do {
+//statement(s); // you can put more statements.
+//do {
+//statement(s);
+//} while( condition );
+//
+//} while( condition );
+
+void::ControlFlows::nestedLoopExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "nested loop example" << endl;
+  cout << "================================" << endl;
+  int i, j;
+  for(i = 2; i<100; i++) {
+    for(j = 2; j <= (i/j); j++)
+      if(!(i%j)) break; // if factor found, not prime
+    if(j > (i/j)) cout << i << " is prime\n";
+  }
+}
+
