@@ -10,14 +10,14 @@ using namespace std; // this is a using directive telling the compiler to check 
 ControlFlows::ControlFlows() {
   cout << "\n" << endl;
   cout << "================================" << endl;
-  cout<<"ControlFlows Constructor called."<<endl;
+  cout << "ControlFlows Constructor called." << endl;
   cout << "================================" << endl;
 }
 
 ControlFlows::~ControlFlows() {
   cout << "\n" << endl;
   cout << "================================" << endl;
-  cout<<"ControlFlows Destructor called."<<endl;
+  cout << "ControlFlows Destructor called." << endl;
   cout << "================================" << endl;
 }
 
@@ -61,7 +61,7 @@ void ::ControlFlows::forLoopExample() {
   int x = n * (p * (p + 1)) / 2;
   printf("%d\n", x);
 
-  int y = (p * (n + p) ) / 2; // Carl Gauss formula
+  int y = (p * (n + p)) / 2; // Carl Gauss formula
   printf("%d\n", y);
 }
 
@@ -77,7 +77,7 @@ void ::ControlFlows::forLoopExample() {
 // will be executed again, and so on. The while-loop will stop only when the conditional_expression returns zero.
 // see: https://www.tutorialspoint.com/cplusplus/cpp_while_loop.htm
 
-void::ControlFlows::whileLoopExample() {
+void ::ControlFlows::whileLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "while loop example" << endl;
@@ -85,7 +85,7 @@ void::ControlFlows::whileLoopExample() {
   // Local variable declaration:
   int a = 10;
   // while loop execution
-  while( a < 20 ) {
+  while (a < 20) {
     cout << "value of a: " << a << endl;
     a++;
   }
@@ -93,10 +93,10 @@ void::ControlFlows::whileLoopExample() {
 
   // another while loop
   int number = 0;
-  while(number != 999) {
+  while (number != 999) {
     printf("Enter an integer or 999 to stop: ");
-    scanf ("%i", &number);
-    printf("%d x 10 = %d\n", number, number*10);
+    scanf("%i", &number);
+    printf("%d x 10 = %d\n", number, number * 10);
   }
 }
 
@@ -111,7 +111,7 @@ void::ControlFlows::whileLoopExample() {
 //}
 //while( condition );
 //see: https://www.tutorialspoint.com/cplusplus/cpp_do_while_loop.htm
-void::ControlFlows::doWhileLoopExample() {
+void ::ControlFlows::doWhileLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "do-while loop example" << endl;
@@ -122,17 +122,16 @@ void::ControlFlows::doWhileLoopExample() {
   do {
     cout << "value of a: " << a << endl;
     a = a + 1;
-  } while( a < 20 );
+  } while (a < 20);
   cout << "\n\n" << endl;
 
   // another do-while loop
   int number = 0;
   do {
-    printf("Enter an integer or 999 to stop: ");
-    scanf ("%i", &number);
-    printf("%d x 10 = %d\n", number, number*10);
-  }
-  while (number != 999);
+    printf("Enter an integer or 0 to stop: ");
+    scanf("%i", &number);
+    printf("%d x 10 = %d\n", number, number * 10);
+  } while (number != 999);
 }
 
 // Nested loops:
@@ -163,17 +162,73 @@ void::ControlFlows::doWhileLoopExample() {
 //
 //} while( condition );
 
-void::ControlFlows::nestedLoopExample() {
+void ::ControlFlows::nestedLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "nested loop example" << endl;
   cout << "================================" << endl;
   int i, j;
-  for(i = 2; i<100; i++) {
-    for(j = 2; j <= (i/j); j++)
-      if(!(i%j)) break; // if factor found, not prime
-    if(j > (i/j)) cout << i << " is prime\n";
+  for (i = 2; i < 100; i++) {
+    for (j = 2; j <= (i / j); j++)
+      if (!(i % j)) break; // if factor found, not prime
+    if (j > (i / j)) cout << i << " is prime\n";
   }
 }
 
+//  Break statement:
+//  The break statement has the following two usages in C++ −
+//  When the break statement is encountered inside a loop, the loop is immediately terminated and program control resumes
+//  at the next statement following the loop.
+//  It can be used to terminate a case in the switch statement (covered in the next chapter).
+//  If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution of
+//  the innermost loop and start executing the next line of code after the block.
+//  Syntax
+//  The syntax of a break statement in C++ is −
+//  break;
+// see: https://www.tutorialspoint.com/cplusplus/cpp_break_statement.htm
+void ::ControlFlows::breakStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "break statement example" << endl;
+  cout << "================================" << endl;
+  // Local variable declaration:
+  int a = 10;
+  // do loop execution
+  do {
+    cout << "value of a: " << a << endl;
+    a = a + 1;
+    if (a > 15) {
+      // terminate the loop
+      break;
+    }
+  } while (a < 20);
+}
+
+// Continue statement
+// The continue statement works somewhat like the break statement. Instead of forcing termination, however, continue
+// forces the next iteration of the loop to take place, skipping any code in between.
+// For the for loop, continue causes the conditional test and increment portions of the loop to execute. For the while
+// and do...while loops, program control passes to the conditional tests.
+// Syntax
+// The syntax of a continue statement in C++ is −
+// continue;
+void::ControlFlows::continueStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "continue statement example" << endl;
+  cout << "================================" << endl;
+  // Local variable declaration:
+  int a = 10;
+  // do loop execution
+  do {
+    if( a == 15) {
+      // skip the iteration.
+      a = a + 1;
+      continue;
+    }
+    cout << "value of a: " << a << endl;
+    a = a + 1;
+  }
+  while( a < 20 );
+}
 

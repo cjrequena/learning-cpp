@@ -27,6 +27,8 @@ int main ()
   controlFlows.whileLoopExample();
   controlFlows.doWhileLoopExample();
   controlFlows.nestedLoopExample();
+  controlFlows.breakStatementExample();
+  controlFlows.continueStatementExample();
 
   return 0;
 }

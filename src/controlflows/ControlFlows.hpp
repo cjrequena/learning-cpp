@@ -13,6 +13,8 @@ class ControlFlows {
   void whileLoopExample();
   void doWhileLoopExample();
   void nestedLoopExample();
+  void breakStatementExample();
+  void continueStatementExample();
 
 };
 
