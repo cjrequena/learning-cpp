@@ -18,4 +18,6 @@ add_executable(
         src/datatypes/DataTypes.hpp
         src/controlflows/ControlFlows.cpp
         src/controlflows/ControlFlows.hpp
+        src/pointers/Pointers.cpp
+        src/pointers/Pointers.hpp
 )
