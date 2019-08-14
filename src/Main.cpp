@@ -3,11 +3,10 @@
 #include "datatypes/DataTypes.hpp"
 #include "helloworld/HelloWorld.hpp"
 
-int main ()
-{
+int main() {
   //Hello World
   HelloWorld helloWorldObj;
-  helloWorldObj.helloWorld ();
+  helloWorldObj.helloWorld();
 
   // Print Data Types
   DataTypes dataTypes;
@@ -23,12 +22,17 @@ int main ()
 
   // Control Flows
   ControlFlows controlFlows;
-  controlFlows.forLoopExample ();
+  controlFlows.forLoopExample();
   controlFlows.whileLoopExample();
   controlFlows.doWhileLoopExample();
   controlFlows.nestedLoopExample();
   controlFlows.breakStatementExample();
   controlFlows.continueStatementExample();
-
+  controlFlows.gotoStatementExample();
+  controlFlows.ifStatementExample();
+  controlFlows.elseStatementExample();
+  controlFlows.elseIfStatementExample();
+  controlFlows.conditionalOperatorExample();
+  controlFlows.switchStatementExample();
   return 0;
 }

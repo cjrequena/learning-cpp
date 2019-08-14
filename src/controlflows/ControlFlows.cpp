@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
+#include <random>
+#include <time.h>
 #include "ControlFlows.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
@@ -209,10 +211,10 @@ void ::ControlFlows::breakStatementExample() {
 // forces the next iteration of the loop to take place, skipping any code in between.
 // For the for loop, continue causes the conditional test and increment portions of the loop to execute. For the while
 // and do...while loops, program control passes to the conditional tests.
-// Syntax
 // The syntax of a continue statement in C++ is −
 // continue;
-void::ControlFlows::continueStatementExample() {
+// see: https://www.tutorialspoint.com/cplusplus/cpp_continue_statement.htm
+void ::ControlFlows::continueStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "continue statement example" << endl;
@@ -221,14 +223,155 @@ void::ControlFlows::continueStatementExample() {
   int a = 10;
   // do loop execution
   do {
-    if( a == 15) {
+    if (a == 15) {
       // skip the iteration.
       a = a + 1;
       continue;
     }
     cout << "value of a: " << a << endl;
     a = a + 1;
-  }
-  while( a < 20 );
+  } while (a < 20);
 }
 
+// Goto statement:
+// A goto statement provides an unconditional jump from the goto to a labeled statement in the same function.
+// NOTE − Use of goto statement is highly discouraged because it makes difficult to trace the control flow of a program,
+// making the program hard to understand and hard to modify. Any program that uses a goto can be rewritten so that it doesn't need the goto.
+// The syntax of a goto statement in C++ is −
+// goto label;
+// ..
+// .
+// label: statement;
+// Where label is an identifier that identifies a labeled statement. A labeled statement is any statement that is preceded
+// by an identifier followed by a colon (:).
+// see: https://www.tutorialspoint.com/cplusplus/cpp_goto_statement.htm
+void ::ControlFlows::gotoStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "goto statement example" << endl;
+  cout << "================================" << endl;
+  // Local variable declaration:
+  int a = 10;
+  // do loop execution
+  LOOP:
+  do {
+    if (a == 15) {
+      // skip the iteration.
+      a = a + 1;
+      goto LOOP;
+    }
+    cout << "value of a: " << a << endl;
+    a = a + 1;
+  } while (a < 20);
+}
+
+// Conditionals:
+// One of the most important constructs in programming is the ability to execute (or not execute) pieces of code, or
+// execute different pieces of code, depending on the outcome of some decision or question about data. The if-else
+// construct lets us to this in C.
+
+// If Statement:
+// The basic if statement looks like this:
+//
+// if (conditional_expression) {
+//  program_statements;
+// }
+// The program_statements are only executed if the conditional_expression returns a non-zero value, i.e. if it returns a value that is not FALSE (FALSE = zero).
+void ::ControlFlows::ifStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "if statement example" << endl;
+  cout << "================================" << endl;
+  int i;
+  for (i = 1; i <= 10; i++) {
+    if ((i % 2) != 0) {
+      printf("%d is odd\n", i);
+    }
+  }
+}
+
+// Else:
+// We can add an else to our if statement, to execute a different code block if the value of the conditional_expression
+// is zero:
+void ::ControlFlows::elseStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "else statement example" << endl;
+  cout << "================================" << endl;
+  int i;
+  for (i = 1; i <= 10; i++) {
+    if ((i % 2) != 0) {
+      printf("%d is odd\n", i);
+    } else {
+      printf("%d is even\n", i);
+    }
+  }
+}
+
+// Else If
+// You can string together several conditional tests and execute different pieces of code by using the else if construct.
+// Here is a simple program that asks the user to enter an integer, and prints to the screen whether that integer is
+// positive, negative, or zero:
+void ::ControlFlows::elseIfStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "else if statement example" << endl;
+  cout << "================================" << endl;
+  int number;
+  printf("enter an integer: ");
+  scanf("%i", &number);
+  if (number < 0) {
+    printf("the integer %d is negative\n", number);
+  } else if (number > 0) {
+    printf("the integer %d is positive\n", number);
+  } else if (number == 0) {
+    printf("the integer %d is zero\n", number);
+  } else {
+    printf("this statement should never be executed!\n");
+  }
+}
+
+// The Conditional Operator
+// There is a convenient shorthand for simple if-else constructs, using the so-called conditional operator:
+// condition ? expression1 : expression2
+// It enables you to shorten your code a bit, but that's all. It doesn't give you any additional functionality,
+// it's just a shorthand:
+void ::ControlFlows::conditionalOperatorExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "conditional operator example" << endl;
+  cout << "================================" << endl;
+  int i;
+  for (i = 1; i <= 10; i++) {
+    (i % 2) ? printf("%d is odd\n", i) : printf("%d is even\n", i);
+  }
+}
+
+// Switch
+// The case of multiple if-else statements strung together to test for different values, and execute different code, is
+// common enough that there is a special construct called the switch statement that is provided for this case:
+void ::ControlFlows::switchStatementExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "switch statement example" << endl;
+  cout << "================================" << endl;
+  int min = 0;
+  int max = 100;
+  std::mt19937 rng(time(NULL));
+  std::uniform_int_distribution<int> gen(min, max); // uniform, unbiased
+  int number = gen(rng);
+  switch (number) {
+    case 1:
+      cout << "case 1" << endl;
+      break;
+    case 2:
+      cout << "case 2" << endl;
+      break;
+    case 3:
+      cout << "case 3" << endl;
+      break;
+    default:
+      cout << "case default " << number << endl;
+      break;
+  }
+}

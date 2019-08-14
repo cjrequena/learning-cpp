@@ -15,6 +15,12 @@ class ControlFlows {
   void nestedLoopExample();
   void breakStatementExample();
   void continueStatementExample();
+  void gotoStatementExample();
+  void ifStatementExample();
+  void elseStatementExample();
+  void elseIfStatementExample();
+  void conditionalOperatorExample();
+  void switchStatementExample();
 
 };
 
