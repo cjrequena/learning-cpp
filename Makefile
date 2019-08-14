@@ -1,18 +1,17 @@
-#
-# **************************************************************
-# *                        Sample C++                          *
-# **************************************************************
-#
+#================================
+# * C++ Sample
+#================================
 # Determine the platform
 UNAME_S := $(shell uname -s)
 
+#================================
+#
+#================================
 ifeq ($(UNAME_S),Darwin)
   CXX := clang++ -arch x86_64
 else
   CXX := g++
 endif
-
-#CXX      := -c++
 CXXFLAGS := -g
 LDFLAGS  :=
 BUILD_DIR    := ./build
@@ -28,17 +27,45 @@ SRC      := $(shell find src -type f -name *.cpp)
 
 OBJECTS := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
+#================================
+#
+#================================
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
+#================================
+#
+#================================
 $(APP_DIR)/$(TARGET): $(OBJECTS)
 	@echo "Linking ..."
 	@mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) -o $(APP_DIR)/$(TARGET) $(OBJECTS)
 
-.PHONY: all build clean
+#================================
+#
+#================================
+.PHONY: clean
 
+#================================
+#
+#================================
+build:
+	@echo "Building ..."
+	@mkdir -p $(APP_DIR)
+	@mkdir -p $(OBJ_DIR)
+
+#================================
+#
+#================================
+clean:
+	@echo "Cleaning ..."
+	-@rm -rvf $(OBJ_DIR)/*
+	-@rm -rvf $(APP_DIR)/*
+
+#================================
+#
+#================================
 print:
 	@echo " SRC: ${SRC}"
 	@echo " OBJECTS: ${OBJECTS}"
@@ -48,16 +75,9 @@ print:
 	@echo " TARGET: ${TARGET}"
 	@echo " INCLUDE: ${INCLUDE}"
 	@echo " CXXFLAGS: ${CXXFLAGS}"
-	@echo " LDFLAGS: ${LDFLAGS}"		
+	@echo " LDFLAGS: ${LDFLAGS}"
 
+#================================
+#
+#================================
 all: print clean build $(APP_DIR)/$(TARGET)
-
-build:
-	@echo "Building ..."
-	@mkdir -p $(APP_DIR)
-	@mkdir -p $(OBJ_DIR)
-
-clean:
-	@echo "Cleaning ..."
-	-@rm -rvf $(OBJ_DIR)/*
-	-@rm -rvf $(APP_DIR)/*
