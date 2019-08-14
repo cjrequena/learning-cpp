@@ -44,7 +44,7 @@ ControlFlows::~ControlFlows() {
 
 // see: https://www.tutorialspoint.com/cplusplus/cpp_for_loop.htm
 
-void ::ControlFlows::forLoopExample() {
+void::ControlFlows::forLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "for loop example" << endl;
@@ -245,7 +245,7 @@ void ::ControlFlows::continueStatementExample() {
 // Where label is an identifier that identifies a labeled statement. A labeled statement is any statement that is preceded
 // by an identifier followed by a colon (:).
 // see: https://www.tutorialspoint.com/cplusplus/cpp_goto_statement.htm
-void ::ControlFlows::gotoStatementExample() {
+void  ControlFlows::gotoStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "goto statement example" << endl;
@@ -336,7 +336,7 @@ void ::ControlFlows::elseIfStatementExample() {
 // condition ? expression1 : expression2
 // It enables you to shorten your code a bit, but that's all. It doesn't give you any additional functionality,
 // it's just a shorthand:
-void ::ControlFlows::conditionalOperatorExample() {
+void  ControlFlows::conditionalOperatorExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "conditional operator example" << endl;
