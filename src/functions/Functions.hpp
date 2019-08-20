@@ -7,15 +7,13 @@
 
 class Functions {
  public:
-  Functions(); // Constructor
-  ~Functions(); //Destructor
-  int maxBetweenTwoNumbersExample(int t_num1, int t_num2); // function returning the max between two numbers
-  void swapCallByValueExample(int t_num1, int t_num2);
-  void swapCallByPointerExample(int *t_ptr_num1, int *t_ptr_num2);
-  void swapCallByReferenceExample(int &t_num1, int &t_num2);
-  int  defaultValuesForParameters(int t_num1, int t_num2 = 20);
-
-
+  int maxBetweenTwoNumbersExample(int aNum1, int aNum2); // function returning the max between two numbers
+  void swapCallByValueExample(int aNum1, int aNum2);
+  void swapCallByPointerExample(int *aNum1Ptr, int *aNum2Ptr);
+  void swapCallByReferenceExample(int &aNum1, int &aNum2);
+  int  defaultValuesForParameters(int aNum1, int aNum2 = 20);
+  Functions();
+  ~Functions();
 };
 
 #endif //CPP_EXERCISES_SRC_FUNCTIONS_FUNCTIONS_HPP_

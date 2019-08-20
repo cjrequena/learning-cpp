@@ -7,8 +7,6 @@
 
 class ControlFlows {
  public:
-  ControlFlows(); // Constructor
-  ~ControlFlows(); //Destructor
   void forLoopExample();
   void whileLoopExample();
   void doWhileLoopExample();
@@ -21,6 +19,8 @@ class ControlFlows {
   void elseIfStatementExample();
   void conditionalOperatorExample();
   void switchStatementExample();
+  ControlFlows();
+  ~ControlFlows();
 
 };
 

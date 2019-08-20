@@ -7,7 +7,9 @@
 
 class HelloWorld {
  public:
-  void helloWorld(); //Hello world method
+  void helloWorld();
+  HelloWorld();
+  ~HelloWorld();
 };
 
 #endif //CPP_EXERCISES_HELLOWORLD_HPP

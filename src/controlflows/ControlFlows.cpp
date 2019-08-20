@@ -9,20 +9,6 @@
 #include "ControlFlows.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
-ControlFlows::ControlFlows() {
-  cout << "\n" << endl;
-  cout << "================================" << endl;
-  cout << "ControlFlows Constructor called." << endl;
-  cout << "================================" << endl;
-}
-
-ControlFlows::~ControlFlows() {
-  cout << "\n" << endl;
-  cout << "================================" << endl;
-  cout << "ControlFlows Destructor called." << endl;
-  cout << "================================" << endl;
-}
-
 //Loops:
 //One of the most useful properties of progammable computers is that you can ask them to repeat a calculation and/or
 //operation many many times, and they will not (usually) complain. The looping constructs in C allow us to repeatedly
@@ -50,12 +36,12 @@ void::ControlFlows::forLoopExample() {
   cout << "for loop example" << endl;
   cout << "================================" << endl;
 
-  int cumsum = 0;
+  int cumSum = 0;
   int i;
   for (i = 1; i <= 100; i++) {
-    cumsum = cumsum + i;
+    cumSum = cumSum + i;
   }
-  printf("the cumulative sum up to 100 is %d\n", cumsum);
+  printf("the cumulative sum up to 100 is %d\n", cumSum);
 
   // A most efficient way
   int n = 1;
@@ -374,4 +360,18 @@ void ::ControlFlows::switchStatementExample() {
       cout << "case default " << number << endl;
       break;
   }
+}
+
+ControlFlows::ControlFlows() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout << "ControlFlows Constructor called." << endl;
+  cout << "================================" << endl;
+}
+
+ControlFlows::~ControlFlows() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout << "ControlFlows Destructor called." << endl;
+  cout << "================================" << endl;
 }

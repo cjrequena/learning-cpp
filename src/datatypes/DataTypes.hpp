@@ -7,8 +7,6 @@
 
 class DataTypes {
  public:
-  DataTypes(); // Constructor
-  ~DataTypes(); //Destructor
   void printDataTypes();
   void printIntegerRepresentations();
   void printEnumerationConstants();
@@ -18,6 +16,8 @@ class DataTypes {
   void typeConversionsExample();
   void typeCastingExample();
   void stringConversionExample();
+  DataTypes();
+  ~DataTypes();
 };
 
 #endif //CPP_EXERCISES_SRC_DATATYPES_DATATYPES_H_

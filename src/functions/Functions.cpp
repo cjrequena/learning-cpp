@@ -7,20 +7,6 @@
 #include "Functions.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
-Functions::Functions() {
-  cout << "\n" << endl;
-  cout << "================================" << endl;
-  cout << "Functions Constructor called." << endl;
-  cout << "================================" << endl;
-}
-
-Functions::~Functions() {
-  cout << "\n" << endl;
-  cout << "================================" << endl;
-  cout << "Functions Destructor called." << endl;
-  cout << "================================" << endl;
-}
-
 //  A function is a group of statements that together perform a task. Every C++ program has at least one function,
 //  which is main(), and all the most trivial programs can define additional functions.
 
@@ -58,13 +44,13 @@ Functions::~Functions() {
 
 // Following is the source code for a function called max(). This function takes two parameters num1 and num2 and return
 // the biggest of both −
-int Functions::maxBetweenTwoNumbersExample(int t_num1, int t_num2) {
+int Functions::maxBetweenTwoNumbersExample(int aNum1, int aNum2) {
   // local variable declaration
   int result;
-  if (t_num1 > t_num2)
-    result = t_num1;
+  if (aNum1 > aNum2)
+    result = aNum1;
   else
-    result = t_num2;
+    result = aNum2;
   return result;
 }
 
@@ -86,11 +72,11 @@ int Functions::maxBetweenTwoNumbersExample(int t_num1, int t_num2) {
 
 //  By default, C++ uses call by value to pass arguments. In general, this means that code within a function cannot alter
 //  the arguments used to call the function. Consider the function swap() definition as follows.
-void Functions::swapCallByValueExample(int t_num1, int t_num2) {
+void Functions::swapCallByValueExample(int aNum1, int aNum2) {
   int temp;
-  temp = t_num1; /* save the value of t_num1 */
-  t_num1 = t_num2;    /* put t_num2 into t_num1 */
-  t_num2 = temp; /* put t_num1 into t_num2 */
+  temp = aNum1; /* save the value of aNum1 */
+  aNum1 = aNum2;    /* put aNum2 into aNum1 */
+  aNum2 = temp; /* put aNum1 into aNum2 */
   return;
 }
 
@@ -105,11 +91,11 @@ void Functions::swapCallByValueExample(int t_num1, int t_num2) {
 //  To pass the value by pointer, argument pointers are passed to the functions just like any other value.
 //  So accordingly you need to declare the function parameters as pointer types as in the following function swap(),
 //  which exchanges the values of the two integer variables pointed to by its arguments.
-void Functions::swapCallByPointerExample(int *t_ptr_num1, int *t_ptr_num2) {
+void Functions::swapCallByPointerExample(int *aNum1Ptr, int *aNum2Ptr) {
   int temp;
-  temp = *t_ptr_num1; /* save the value at address t_ptr_num1 */
-  *t_ptr_num1 = *t_ptr_num2; /* put t_ptr_num2 into t_ptr_num1 */
-  *t_ptr_num2 = temp; /* put t_ptr_num1 into t_ptr_num2 */
+  temp = *aNum1Ptr; /* save the value at address aNum1Ptr */
+  *aNum1Ptr = *aNum2Ptr; /* put aNum2Ptr into aNum1Ptr */
+  *aNum2Ptr = temp; /* put aNum1Ptr into aNum2Ptr */
   return;
 }
 
@@ -124,11 +110,11 @@ void Functions::swapCallByPointerExample(int *t_ptr_num1, int *t_ptr_num2) {
 //  To pass the value by reference, argument reference is passed to the functions just like any other value. So accordingly
 //  you need to declare the function parameters as reference types as in the following function swap(), which exchanges
 //  the values of the two integer variables pointed to by its arguments.
-void Functions::swapCallByReferenceExample(int &t_num1, int &t_num2) {
+void Functions::swapCallByReferenceExample(int &aNum1, int &aNum2) {
   int temp;
-  temp = t_num1; /* save the value at address t_num1 */
-  t_num1 = t_num2;    /* put t_num2 into t_num1 */
-  t_num2 = temp; /* put t_num1 into t_num2 */
+  temp = aNum1; /* save the value at address aNum1 */
+  aNum1 = aNum2;    /* put aNum2 into aNum1 */
+  aNum2 = temp; /* put aNum1 into aNum2 */
   return;
 }
 
@@ -139,8 +125,22 @@ void Functions::swapCallByReferenceExample(int &t_num1, int &t_num2) {
 //  This is done by using the assignment operator and assigning values for the arguments in the function definition.
 //  If a value for that parameter is not passed when the function is called, the default given value is used, but if a value
 //  is specified, this default value is ignored and the passed value is used instead. Consider the following example −
-int  Functions::defaultValuesForParameters(int t_num1, int t_num2) {
+int  Functions::defaultValuesForParameters(int aNum1, int aNum2) {
   int result;
-  result = t_num1 + t_num2;
+  result = aNum1 + aNum2;
   return (result);
+}
+
+Functions::Functions() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout << "Functions Constructor called." << endl;
+  cout << "================================" << endl;
+}
+
+Functions::~Functions() {
+  cout << "\n" << endl;
+  cout << "================================" << endl;
+  cout << "Functions Destructor called." << endl;
+  cout << "================================" << endl;
 }
