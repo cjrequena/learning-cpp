@@ -20,4 +20,6 @@ add_executable(
         src/controlflows/ControlFlows.hpp
         src/pointers/Pointers.cpp
         src/pointers/Pointers.hpp
+        src/functions/Functions.cpp
+        src/functions/Functions.hpp
 )
