@@ -1,4 +1,5 @@
 #include <iostream>
+#include "numbers/Numbers.hpp"
 #include "modifiertypes/ModifierTypes.hpp"
 #include "functions/Functions.hpp"
 #include "controlflows/ControlFlows.hpp"
@@ -77,5 +78,10 @@ int main() {
   // Modifier Types
   ModifierTypes modifierTypes;
   modifierTypes.showDifferenceBetweenSignedAndUnsignedIntegers();
+
+  // Numbers
+  Numbers numbers;
+  numbers.numbersExample();
+  numbers.mathematicalOperationsExample();
   return 0;
 }
