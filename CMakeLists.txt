@@ -22,4 +22,4 @@ add_executable(
         src/pointers/Pointers.hpp
         src/functions/Functions.cpp
         src/functions/Functions.hpp
-)
+        src/storageclasses/StorageClasses.cpp src/storageclasses/StorageClasses.hpp)
