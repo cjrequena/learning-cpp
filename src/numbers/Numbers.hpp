@@ -9,7 +9,7 @@ class Numbers {
  public:
   void numbersExample();
   void mathematicalOperationsExample();
-  int randomNumberExample();
+  void randomNumberExample();
   unsigned int randomNumberBetweenMinMaxExample(unsigned int min, unsigned int max);
   Numbers();
   ~Numbers();

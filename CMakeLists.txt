@@ -22,4 +22,9 @@ add_executable(
         src/pointers/Pointers.hpp
         src/functions/Functions.cpp
         src/functions/Functions.hpp
-        src/storageclasses/StorageClasses.cpp src/storageclasses/StorageClasses.hpp src/modifiertypes/ModifierTypes.cpp src/modifiertypes/ModifierTypes.hpp src/numbers/Numbers.cpp src/numbers/Numbers.hpp)
+        src/storageclasses/StorageClasses.cpp
+        src/storageclasses/StorageClasses.hpp
+        src/modifiertypes/ModifierTypes.cpp
+        src/modifiertypes/ModifierTypes.hpp
+        src/numbers/Numbers.cpp src/numbers/Numbers.hpp
+)

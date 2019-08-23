@@ -110,7 +110,7 @@ void Numbers::mathematicalOperationsExample() {
 
 //  Following is a simple example to generate few random numbers. This example makes use of time() function to get the
 //  number of seconds on your system time, to randomly seed the rand() function −
-int Numbers::randomNumberExample() {
+void Numbers::randomNumberExample() {
   cout << "" << endl;
   cout << "================================" << endl;
   cout << "random number example" << endl;
@@ -124,7 +124,6 @@ int Numbers::randomNumberExample() {
     // generate actual random number
     int j = rand();
     cout << "Random Number : " << j << endl;
-    return j;
   }
 }
 
