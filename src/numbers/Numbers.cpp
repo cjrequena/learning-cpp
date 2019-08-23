@@ -5,6 +5,8 @@
 
 #include <iostream>
 #include <cmath>
+#include <time.h>
+#include <random>
 #include "Numbers.hpp"
 using namespace std;
 
@@ -19,10 +21,10 @@ void Numbers::numbersExample() {
   cout << "================================" << endl;
 
   // number definition:
-  short  s;
-  int    i;
-  long   l;
-  float  f;
+  short s;
+  int i;
+  long l;
+  float f;
   double d;
 
   // number assignments;
@@ -87,10 +89,10 @@ void Numbers::mathematicalOperationsExample() {
   cout << "mathematical operations example" << endl;
   cout << "================================" << endl;
   // number definition:
-  short  s = 10;
-  int    i = -1000;
-  long   l = 100000;
-  float  f = 230.47;
+  short s = 10;
+  int i = -1000;
+  long l = 100000;
+  float f = 230.47;
   double d = 200.374;
 
   // mathematical operations;
@@ -99,6 +101,44 @@ void Numbers::mathematicalOperationsExample() {
   cout << "floor(200.374) :" << floor(d) << endl;
   cout << "sqrt(230.47) :" << sqrt(f) << endl;
   cout << "pow(200.374, 2) :" << pow(d, 2) << endl;
+}
+
+//  Random Numbers in C++
+//  There are many cases where you will wish to generate a random number. There are actually two functions you will need
+//  to know about random number generation. The first is rand(), this function will only return a pseudo random number.
+//  The way to fix this is to first call the srand() function.
+
+//  Following is a simple example to generate few random numbers. This example makes use of time() function to get the
+//  number of seconds on your system time, to randomly seed the rand() function −
+int Numbers::randomNumberExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "random number example" << endl;
+  cout << "================================" << endl;
+  int i;
+  // set the seed
+  srand((unsigned) time(NULL));
+
+  /* generate 10  random numbers. */
+  for (i = 0; i < 10; i++) {
+    // generate actual random number
+    int j = rand();
+    cout << "Random Number : " << j << endl;
+    return j;
+  }
+}
+
+unsigned int Numbers::randomNumberBetweenMinMaxExample(unsigned int min, unsigned int max) {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "random number between min max example" << endl;
+  cout << "================================" << endl;
+
+  std::mt19937 rng(time(NULL));
+  std::uniform_int_distribution<int> gen(min, max);
+  unsigned int number = gen(rng);
+  cout << "Random Number between " << min << " and " << max << " : " << number << endl;
+  return number;
 }
 
 Numbers::Numbers() {

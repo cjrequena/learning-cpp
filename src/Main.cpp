@@ -83,5 +83,7 @@ int main() {
   Numbers numbers;
   numbers.numbersExample();
   numbers.mathematicalOperationsExample();
+  numbers.randomNumberExample();
+  numbers.randomNumberBetweenMinMaxExample(100,110);
   return 0;
 }
