@@ -6,7 +6,11 @@
 #define CPP_EXERCISES_SRC_POINTERS_POINTERS_HPP_
 
 class Pointers {
-
+ public:
+  void declaringPointerExample();
+  void printVariableAddressExample();
+  Pointers();
+  ~Pointers();
 };
 
 #endif //CPP_EXERCISES_SRC_POINTERS_POINTERS_HPP_

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "pointers/Pointers.hpp"
 #include "numbers/Numbers.hpp"
 #include "modifiertypes/ModifierTypes.hpp"
 #include "functions/Functions.hpp"
@@ -85,5 +86,10 @@ int main() {
   numbers.mathematicalOperationsExample();
   numbers.randomNumberExample();
   numbers.randomNumberBetweenMinMaxExample(100,110);
+
+  // Pointers
+  Pointers pointers;
+  pointers.declaringPointerExample();
+  pointers.printVariableAddressExample();
   return 0;
 }
