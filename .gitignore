@@ -1,3 +1,6 @@
+# O.S Files
+.DS_Store
+
 # Prerequisites
 *.d
 
