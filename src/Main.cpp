@@ -91,5 +91,6 @@ int main() {
   Pointers pointers;
   pointers.declaringPointerExample();
   pointers.printVariableAddressExample();
+  pointers.nullPointerExample();
   return 0;
 }

@@ -91,6 +91,30 @@ void Pointers::printVariableAddressExample() {
   cout << &var2 << endl;
 }
 
+// Null Pointers
+// C++ supports null pointer, which is a constant with a value of zero defined in several standard libraries.
+// It is always a good practice to assign the pointer NULL to a pointer variable in case you do not have exact address to be assigned. 
+// This is done at the time of variable declaration. A pointer that is assigned NULL is called a null pointer.
+// The NULL pointer is a constant with a value of zero defined in several standard libraries, including iostream.
+// On most of the operating systems, programs are not permitted to access memory at address 0 because that memory 
+// is reserved by the operating system. However, the memory address 0 has special significance; it signals that 
+// the pointer is not intended to point to an accessible memory location. But by convention, if a pointer contains 
+// the null (zero) value, it is assumed to point to nothing.
+void Pointers::nullPointerExample(){
+   cout << "" << endl;
+   cout << "================================" << endl;
+   cout << "null pointer example" << endl;
+   cout << "================================" << endl;
+   int  *ptr = NULL;
+   cout << "The value of ptr is " << ptr << endl;
+   if(ptr) { // succeeds if p is not null
+    cout << "The value of ptr is not null " << ptr << endl;
+   }else if(!ptr){ // succeeds if p is null
+    cout << "The value of ptr is null " << ptr << endl;
+   }    
+   
+}
+
 Pointers::Pointers() {
   cout << "\n" << endl;
   cout << "================================" << endl;

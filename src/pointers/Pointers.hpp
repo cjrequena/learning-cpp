@@ -9,6 +9,7 @@ class Pointers {
  public:
   void declaringPointerExample();
   void printVariableAddressExample();
+  void nullPointerExample();
   Pointers();
   ~Pointers();
 };
