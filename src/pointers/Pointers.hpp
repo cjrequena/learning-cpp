@@ -14,6 +14,7 @@ public:
   void incrementPointerExample();
   void decrementPointerExample();
   void pointerComparisonsExample();
+  void arrayOfPointersExample();
   Pointers();
   ~Pointers();
 };
