@@ -114,6 +114,83 @@ void Pointers::nullPointerExample(){
    }    
    
 }
+//  Pointer Arithmetic
+//  As you understood pointer is an address which is a numeric value; therefore, you can perform arithmetic operations
+//  on a pointer just as you can a numeric value. There are four arithmetic operators that can be used on pointers:
+//  ++, --, +, and -
+
+//  To understand pointer arithmetic, let us consider that ptr is an integer pointer which points to the address 1000.
+//  Assuming 32-bit integers, let us perform the following arithmetic operation on the pointer −
+//  ptr++
+//  the ptr will point to the location 1004 because each time ptr is incremented, it will point to the next integer.
+//  This operation will move the pointer to next memory location without impacting actual value at the memory location. I
+//  f ptr points to a character whose address is 1000, then above operation will point to the location 1001 because
+//  next character will be available at 1001.
+const int MAX = 3;
+void Pointers::incrementPointerExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "increment pointer example" << endl;
+  cout << "================================" << endl;
+  int  unsigned var[MAX] = {10, 100, 200};
+  int unsigned *ptr;
+  // let us have array address in pointer.
+  ptr = var;
+  for (int i = 0; i < MAX; i++) {
+    cout << "Address of var[" << i << "] = ";
+    cout << ptr << endl;
+    cout << "Value of var[" << i << "] = ";
+    cout << *ptr << endl;
+
+    // point to the next location
+    ptr++;
+  }
+}
+
+void Pointers::decrementPointerExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "decrement pointer example" << endl;
+  cout << "================================" << endl;
+  int  var[MAX] = {10, 100, 200};
+  int  *ptr;
+  // let us have address of the last element in pointer.
+  ptr = &var[MAX-1];
+  for (int i = MAX; i > 0; i--) {
+    cout << "Address of var[" << i << "] = ";
+    cout << ptr << endl;
+    cout << "Value of var[" << i << "] = ";
+    cout << *ptr << endl;
+    // point to the previous location
+    ptr--;
+  }
+}
+
+//  Pointer Comparisons
+//  Pointers may be compared by using relational operators, such as ==, <, and >. If p1 and p2 point to variables that
+//  are related to each other, such as elements of the same array, then p1 and p2 can be meaningfully compared.
+//  The following program modifies the previous example one by incrementing the variable pointer so long as the address
+//  to which it points is either less than or equal to the address of the last element of the array, which is &var[MAX - 1] −
+void Pointers::pointerComparisonsExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "pointer comparisons example" << endl;
+  cout << "================================" << endl;
+  int  var[MAX] = {10, 100, 200};
+  int  *ptr;
+  // let us have address of the first element in pointer.
+  ptr = var;
+  int i = 0;
+  while ( ptr <= &var[MAX - 1] ) {
+    cout << "Address of var[" << i << "] = ";
+    cout << ptr << endl;
+    cout << "Value of var[" << i << "] = ";
+    cout << *ptr << endl;
+    // point to the previous location
+    ptr++;
+    i++;
+  }
+}
 
 Pointers::Pointers() {
   cout << "\n" << endl;

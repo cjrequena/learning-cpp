@@ -11,6 +11,9 @@ public:
   void declaringPointerExample();
   void printVariableAddressExample();
   void nullPointerExample();
+  void incrementPointerExample();
+  void decrementPointerExample();
+  void pointerComparisonsExample();
   Pointers();
   ~Pointers();
 };

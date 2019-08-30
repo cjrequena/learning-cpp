@@ -92,5 +92,8 @@ int main() {
   pointers.declaringPointerExample();
   pointers.printVariableAddressExample();
   pointers.nullPointerExample();
+  pointers.incrementPointerExample();
+  pointers.decrementPointerExample();
+  pointers.pointerComparisonsExample();
   return 0;
 }
