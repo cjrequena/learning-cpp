@@ -215,6 +215,19 @@ void Pointers::arrayOfPointersExample() {
     cout << *ptr[i] << endl;
   }
 }
+
+void Pointers::arrayOfPointersToCharacterExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "array of pointers to character example" << endl;
+  cout << "================================" << endl;
+  const char *names[MAX] = { "Zara Ali", "Hina Ali", "Nuha Ali" };
+  for (int i = 0; i < MAX; i++) {
+    cout << "Value of names[" << i << "] = ";
+    cout << (names[i]) << endl;
+  }
+}
+
 Pointers::Pointers() {
   cout << "\n" << endl;
   cout << "================================" << endl;
