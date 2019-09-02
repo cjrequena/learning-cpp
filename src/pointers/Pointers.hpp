@@ -17,6 +17,8 @@ public:
   void arrayOfPointersExample();
   void arrayOfPointersToCharacterExample();
   void pointerToPointerExample();
+  void passingPointersToFunctionsExample(unsigned long *par);
+  int * returnPointerFromFunctionsExample();
   Pointers();
   ~Pointers();
 };

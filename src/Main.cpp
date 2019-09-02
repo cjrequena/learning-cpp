@@ -98,5 +98,17 @@ int main() {
   pointers.arrayOfPointersExample();
   pointers.arrayOfPointersToCharacterExample();
   pointers.pointerToPointerExample();
+
+  unsigned long sec;
+  pointers.passingPointersToFunctionsExample(&sec);
+  cout << "Number of seconds :" << sec << endl;
+
+  int *p;
+  p = pointers.returnPointerFromFunctionsExample();
+  for ( int i = 0; i < 10; i++ ) {
+    cout << "*(p + " << i << ") : ";
+    cout << *(p + i) << endl;
+  }
+
   return 0;
 }

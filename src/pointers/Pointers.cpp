@@ -260,6 +260,45 @@ void Pointers::pointerToPointerExample() {
   cout << "Value available at **pptr :" << **pptr << endl;
 
 }
+//  Passing Pointers to Functions
+//  C++ allows you to pass a pointer to a function. To do so, simply declare the function parameter as a pointer type.
+//  Following a simple example where we pass an unsigned long pointer to a function and change the value inside the
+//  function which reflects back in the calling function −
+void Pointers::passingPointersToFunctionsExample(unsigned long *par) {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "passing pointers to functions example" << endl;
+  cout << "================================" << endl;
+  // get the current number of seconds
+  *par = time( NULL );
+  return;
+}
+
+//  Return Pointer from Functions
+//  C++ allows a function to return a pointer to local variable, static variable and dynamically allocated memory as well.
+//  As we have seen in last chapter how C++ allows to return an array from a function, similar way C++ allows you to return
+//  a pointer from a function. To do so, you would have to declare a function returning a pointer as in the following example −
+//  int * myFunction() {
+//    .
+//    .
+//    .
+//  }
+//  Second point to remember is that, it is not good idea to return the address of a local variable to outside of the function,
+//  so you would have to define the local variable as static variable.
+int * Pointers::returnPointerFromFunctionsExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "return pointer from functions example" << endl;
+  cout << "================================" << endl;
+  static int  r[10];
+  // set the seed
+  srand( (unsigned)time( NULL ) );
+  for (int i = 0; i < 10; ++i) {
+    r[i] = rand();
+    cout << r[i] << endl;
+  }
+  return r;
+}
 
 Pointers::Pointers() {
   cout << "\n" << endl;
