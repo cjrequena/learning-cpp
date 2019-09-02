@@ -16,6 +16,7 @@ public:
   void pointerComparisonsExample();
   void arrayOfPointersExample();
   void arrayOfPointersToCharacterExample();
+  void pointerToPointerExample();
   Pointers();
   ~Pointers();
 };

@@ -228,6 +228,39 @@ void Pointers::arrayOfPointersToCharacterExample() {
   }
 }
 
+//  Pointer to Pointer (Multiple Indirection)
+
+//  A pointer to a pointer is a form of multiple indirection or a chain of pointers. Normally, a pointer contains the
+//  address of a variable. When we define a pointer to a pointer, the first pointer contains the address of the second pointer,
+//  which points to the location that contains the actual value as shown below.
+//  address_ptr --> address_ptr --> variable
+
+//  A variable that is a pointer to a pointer must be declared as such. This is done by placing an additional asterisk
+//  in front of its name. For example, following is the declaration to declare a pointer to a pointer of type int −
+//  int **var;
+
+//  When a target value is indirectly pointed to by a pointer to a pointer, accessing that value requires that the asterisk
+//  operator be applied twice, as is shown below in the example −
+void Pointers::pointerToPointerExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "pointer to pointer example" << endl;
+  cout << "================================" << endl;
+  int  var;
+  int  *ptr;
+  int  **pptr;
+  var = 3000;
+  // take the address of var
+  ptr = &var;
+  // take the address of ptr using address of operator &
+  pptr = &ptr;
+  // take the value using pptr
+  cout << "Value of var :" << var << endl;
+  cout << "Value available at *ptr :" << *ptr << endl;
+  cout << "Value available at **pptr :" << **pptr << endl;
+
+}
+
 Pointers::Pointers() {
   cout << "\n" << endl;
   cout << "================================" << endl;

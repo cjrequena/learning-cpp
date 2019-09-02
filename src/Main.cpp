@@ -97,5 +97,6 @@ int main() {
   pointers.pointerComparisonsExample();
   pointers.arrayOfPointersExample();
   pointers.arrayOfPointersToCharacterExample();
+  pointers.pointerToPointerExample();
   return 0;
 }
