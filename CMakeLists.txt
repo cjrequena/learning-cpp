@@ -27,4 +27,4 @@ add_executable(
         src/modifiertypes/ModifierTypes.cpp
         src/modifiertypes/ModifierTypes.hpp
         src/numbers/Numbers.cpp src/numbers/Numbers.hpp
-)
+        src/arrays/Arrays.cpp src/arrays/Arrays.hpp)

@@ -1,4 +1,5 @@
 #include <iostream>
+#include "arrays/Arrays.hpp"
 #include "pointers/Pointers.hpp"
 #include "numbers/Numbers.hpp"
 #include "modifiertypes/ModifierTypes.hpp"
@@ -109,6 +110,9 @@ int main() {
     cout << "*(p + " << i << ") : ";
     cout << *(p + i) << endl;
   }
+
+  // Arrays
+  Arrays arrays;
 
   return 0;
 }
