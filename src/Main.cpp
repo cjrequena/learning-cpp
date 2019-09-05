@@ -115,6 +115,7 @@ int main() {
   Arrays arrays;
   arrays.arraysExample();
   arrays.multiDimensionalArraysExample();
+  arrays.pointerToAnArrayExample();
 
   return 0;
 }

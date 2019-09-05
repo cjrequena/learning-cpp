@@ -9,6 +9,7 @@ class Arrays {
 public:
   void arraysExample();
   void multiDimensionalArraysExample();
+  void pointerToAnArrayExample();
   Arrays();
   ~Arrays();
 };

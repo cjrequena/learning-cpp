@@ -83,7 +83,44 @@ void Arrays::multiDimensionalArraysExample() {
   }
 }
 
+//  Pointer to an array
+//  You can generate a pointer to the first element of an array by simply specifying the array name, without any index.
+//  An array name is a constant pointer to the first element of the array. Therefore, in the declaration −
+//  double balance[50];
+//  balance is a pointer to &balance[0], which is the address of the first element of the array balance. Thus, the following
+//  program fragment assigns p the address of the first element of balance −
+//  double *p;
+//  double balance[10];
+//  p = balance;
+//  It is legal to use array names as constant pointers, and vice versa. Therefore, *(balance + 4) is a legitimate way of
+//  accessing the data at balance[4].
+//  Once you store the address of first element in p, you can access array elements using *p, *(p+1), *(p+2) and so on. Below
+//  is the example to show all the concepts discussed above −
+void Arrays::pointerToAnArrayExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "pointer to an array example" << endl;
+  cout << "================================" << endl;
+  // an array with 5 elements.
+  double balance[5] = {1000.0, 2.0, 3.4, 17.0, 50.0};
+  double *p;
 
+  p = balance;
+
+  // output each array element's value
+  cout << "Array values using pointer " << endl;
+
+  for ( int i = 0; i < 5; i++ ) {
+    cout << "*(p + " << i << ") : ";
+    cout << *(p + i) << endl;
+  }
+  cout << "Array values using balance as address " << endl;
+
+  for ( int i = 0; i < 5; i++ ) {
+    cout << "*(balance + " << i << ") : ";
+    cout << *(balance + i) << endl;
+  }
+}
 Arrays::Arrays() {
   cout << "\n" << endl;
   cout << "================================" << endl;
