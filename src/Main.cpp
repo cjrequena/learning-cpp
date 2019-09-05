@@ -113,6 +113,8 @@ int main() {
 
   // Arrays
   Arrays arrays;
+  arrays.arraysExample();
+  arrays.multiDimensionalArraysExample();
 
   return 0;
 }

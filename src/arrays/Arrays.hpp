@@ -7,6 +7,8 @@
 
 class Arrays {
 public:
+  void arraysExample();
+  void multiDimensionalArraysExample();
   Arrays();
   ~Arrays();
 };
