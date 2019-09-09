@@ -10,6 +10,11 @@ public:
   void arraysExample();
   void multiDimensionalArraysExample();
   void pointerToAnArrayExample();
+  double  passingAnArrayToFunctionWay1Example(int arr[], int size);
+  double  passingAnArrayToFunctionWay2Example(int *arr, int size);
+  double  passingAnArrayToFunctionWay3Example(std::array<int,5> arr);
+
+
   Arrays();
   ~Arrays();
 };

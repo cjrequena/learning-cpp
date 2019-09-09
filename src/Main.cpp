@@ -1,4 +1,5 @@
 #include <iostream>
+#include <array>
 #include "arrays/Arrays.hpp"
 #include "pointers/Pointers.hpp"
 #include "numbers/Numbers.hpp"
@@ -117,5 +118,11 @@ int main() {
   arrays.multiDimensionalArraysExample();
   arrays.pointerToAnArrayExample();
 
+  int arr[5] = {1000, 2, 3, 17, 50};
+  arrays.passingAnArrayToFunctionWay1Example(arr,5);
+  arrays.passingAnArrayToFunctionWay2Example(arr,5);
+
+  std::array<int, 5> arr2 = {1000, 2, 3, 17, 50};
+  arrays.passingAnArrayToFunctionWay3Example(arr2);
   return 0;
 }

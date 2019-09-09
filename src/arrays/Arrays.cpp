@@ -3,9 +3,10 @@
 //
 // see: https://www.tutorialspoint.com/cplusplus/cpp_arrays.htm
 
-#include "iostream"
-#include "Arrays.hpp"
+#include <iostream>
+#include <array>
 #include <iomanip>
+#include "Arrays.hpp"
 using namespace std;
 using std::setw;
 
@@ -121,6 +122,88 @@ void Arrays::pointerToAnArrayExample() {
     cout << *(balance + i) << endl;
   }
 }
+
+//  Passing arrays to functions
+//  You can pass to the function a pointer to an array by specifying the array's name without an index.
+
+//  C++ does not allow to pass an entire array as an argument to a function. However, You can pass a pointer to an array
+//  by specifying the array's name without an index.
+//
+//  If you want to pass a single-dimension array as an argument in a function, you would have to declare function formal
+//  parameter in one of following three ways and all three declaration methods produce similar results because each tells
+//  the compiler that an integer pointer is going to be received.
+
+//  Way-1
+//  Formal parameters as a pointer as follows −
+//void myFunction(int *param) {
+//  .
+//  .
+//  .
+//}
+
+//  Way-2
+//  Formal parameters as a sized array as follows −
+//void myFunction(int param[10]) {
+//  .
+//  .
+//  .
+//}
+
+//  Way-3
+//  Formal parameters as an unsized array as follows −
+//void myFunction(int param[]) {
+//  .
+//  .
+//  .
+//}
+
+double Arrays::passingAnArrayToFunctionWay1Example(int arr[], int size) {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "passing an array to function way1 example" << endl;
+  cout << "================================" << endl;
+  int i, sum = 0;
+  double avg;
+  for (i = 0; i < size; ++i) {
+    sum += arr[i];
+  }
+  avg = double(sum) / size;
+  cout << "avg = " << avg;
+  return avg;
+}
+
+double Arrays::passingAnArrayToFunctionWay2Example(int *arr, int size) {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "passing an array to function way2 example" << endl;
+  cout << "================================" << endl;
+  int i, sum = 0;
+  double avg;
+  for (i = 0; i < size; ++i) {
+    sum += arr[i];
+  }
+  avg = double(sum) / size;
+  cout << "avg = " << avg;
+  return avg;
+}
+
+double Arrays::passingAnArrayToFunctionWay3Example(std::array<int, 5> arr) {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "passing an array to function way3 example" << endl;
+  cout << "================================" << endl;
+  int i, sum = 0;
+  double avg;
+  int size = arr.size();
+  for (i = 0; i < size; ++i) {
+    sum += arr[i];
+  }
+  avg = double(sum) / size;
+  cout << "avg = " << avg;
+  return avg;
+}
+
+
 Arrays::Arrays() {
   cout << "\n" << endl;
   cout << "================================" << endl;
