@@ -13,7 +13,7 @@ public:
   double  passingAnArrayToFunctionWay1Example(int arr[], int size);
   double  passingAnArrayToFunctionWay2Example(int *arr, int size);
   double  passingAnArrayToFunctionWay3Example(std::array<int,5> arr);
-
+  int * returnAnArrayFromFunctionExample();
 
   Arrays();
   ~Arrays();

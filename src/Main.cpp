@@ -124,5 +124,12 @@ int main() {
 
   std::array<int, 5> arr2 = {1000, 2, 3, 17, 50};
   arrays.passingAnArrayToFunctionWay3Example(arr2);
+
+  int *ptr;
+  ptr = arrays.returnAnArrayFromFunctionExample();
+  for ( int i = 0; i < 10; i++ ) {
+    cout << "*(ptr + " << i << ") : ";
+    cout << *(ptr + i) << endl;
+  }
   return 0;
 }

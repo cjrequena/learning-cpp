@@ -203,6 +203,37 @@ double Arrays::passingAnArrayToFunctionWay3Example(std::array<int, 5> arr) {
   return avg;
 }
 
+//  Return Array from Functions in C++
+
+//  C++ does not allow to return an entire array as an argument to a function. However, you can return a pointer to an
+//  array by specifying the array's name without an index.
+//  If you want to return a single-dimension array from a function, you would have to declare a function returning a pointer
+//  as in the following example −
+//  int * myFunction() {
+//    .
+//    .
+//    .
+//  }
+
+//  Second point to remember is that C++ does not advocate to return the address of a local variable to outside of the
+//  function so you would have to define the local variable as static variable.
+
+//  Now, consider the following function, which will generate 10 random numbers and return them using an array and call
+//  this function as follows −
+int * Arrays::returnAnArrayFromFunctionExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "return an array from function example" << endl;
+  cout << "================================" << endl;
+  static int  r[10];
+  // set the seed
+  srand( (unsigned)time( NULL ) );
+  for (int i = 0; i < 10; ++i) {
+    r[i] = rand();
+    cout << r[i] << endl;
+  }
+  return r;
+}
 
 Arrays::Arrays() {
   cout << "\n" << endl;
