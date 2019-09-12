@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include "strings/Strings.hpp"
 #include "arrays/Arrays.hpp"
 #include "pointers/Pointers.hpp"
 #include "numbers/Numbers.hpp"
@@ -131,5 +132,11 @@ int main() {
     cout << "*(ptr + " << i << ") : ";
     cout << *(ptr + i) << endl;
   }
+
+  // Strings
+  Strings strings;
+  strings.stringExample();
+  strings.strcpyExample();
+
   return 0;
 }
