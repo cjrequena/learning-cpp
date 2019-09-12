@@ -1,6 +1,7 @@
 //
 // Created by carlosjose.requena on 14/08/2019.
 //
+#include <time.h>
 #include "iostream"
 #include "Pointers.hpp"
 using namespace std;
