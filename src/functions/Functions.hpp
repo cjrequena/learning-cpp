@@ -2,8 +2,8 @@
 // Created by carlosjose.requena on 20/08/2019.
 //
 
-#ifndef CPP_EXERCISES_SRC_FUNCTIONS_FUNCTIONS_HPP_
-#define CPP_EXERCISES_SRC_FUNCTIONS_FUNCTIONS_HPP_
+#ifndef LEARNING_CPP_SRC_FUNCTIONS_FUNCTIONS_HPP_
+#define LEARNING_CPP_SRC_FUNCTIONS_FUNCTIONS_HPP_
 
 class Functions {
  public:
@@ -16,4 +16,4 @@ class Functions {
   ~Functions();
 };
 
-#endif //CPP_EXERCISES_SRC_FUNCTIONS_FUNCTIONS_HPP_
+#endif //LEARNING_CPP_SRC_FUNCTIONS_FUNCTIONS_HPP_

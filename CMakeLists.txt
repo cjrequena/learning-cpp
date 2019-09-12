@@ -10,7 +10,7 @@ include_directories(src)
 include_directories(test)
 
 add_executable(
-        cpp_exercises
+        learning_cpp
         src/Main.cpp
         src/helloworld/HelloWorld.cpp
         src/helloworld/HelloWorld.hpp

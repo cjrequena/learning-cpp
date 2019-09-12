@@ -2,8 +2,8 @@
 // Created by vagrant on 9/2/19.
 //
 
-#ifndef CPP_EXERCISES_SRC_ARRAYS_ARRAYS_HPP
-#define CPP_EXERCISES_SRC_ARRAYS_ARRAYS_HPP
+#ifndef LEARNING_CPP_SRC_ARRAYS_ARRAYS_HPP
+#define LEARNING_CPP_SRC_ARRAYS_ARRAYS_HPP
 
 class Arrays {
 public:
@@ -19,4 +19,4 @@ public:
   ~Arrays();
 };
 
-#endif //CPP_EXERCISES_SRC_ARRAYS_ARRAYS_HPP
+#endif //LEARNING_CPP_SRC_ARRAYS_ARRAYS_HPP
