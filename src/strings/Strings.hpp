@@ -9,6 +9,7 @@ class Strings {
 public:
   void stringExample();
   void strcpyExample();
+  void strcatExample();
   Strings();
   ~Strings();
 };

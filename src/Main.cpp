@@ -137,6 +137,7 @@ int main() {
   Strings strings;
   strings.stringExample();
   strings.strcpyExample();
+  strings.strcatExample();
 
   return 0;
 }

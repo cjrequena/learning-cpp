@@ -53,12 +53,28 @@ void Strings::strcpyExample() {
   cout << "================================" << endl;
   cout << "strcpy example" << endl;
   cout << "================================" << endl;
-  char greeting[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
+  char greeting1[6] = {'H', 'e', 'l', 'l', 'o', '\0'};
   char greeting2[6] = "";
-  strcpy(greeting2, greeting);
-  cout << "Greeting message copy: ";
+  strcpy(greeting2, greeting1);
+  cout << "Greeting message: ";
   cout << greeting2 << endl;
 }
+
+//  strcat(s1, s2);
+//  Concatenates string s2 onto the end of string s1.
+void Strings::strcatExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "strcat example" << endl;
+  cout << "================================" << endl;
+  char greeting1[13] = "Hello ";
+  char greeting2[6] = "World";
+  strcat(greeting1, greeting2);
+  cout << "Greeting message: ";
+  cout << greeting1 << endl;
+}
+
+
 Strings::Strings() {
   cout << "\n" << endl;
   cout << "================================" << endl;
@@ -69,6 +85,6 @@ Strings::Strings() {
 Strings::~Strings() {
   cout << "\n" << endl;
   cout << "================================" << endl;
-  cout << "Numbers Destructor Called." << endl;
+  cout << "Strings Destructor Called." << endl;
   cout << "================================" << endl;
 }
