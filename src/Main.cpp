@@ -138,6 +138,7 @@ int main() {
   strings.stringExample();
   strings.strcpyExample();
   strings.strcatExample();
+  strings.strlenExample();
 
   return 0;
 }

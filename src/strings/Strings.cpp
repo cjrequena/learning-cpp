@@ -74,6 +74,16 @@ void Strings::strcatExample() {
   cout << greeting1 << endl;
 }
 
+//  strlen(s1);
+//  Returns the length of string s1.
+void Strings::strlenExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "strlen example" << endl;
+  cout << "================================" << endl;
+  char greeting[12] = "Hello World";
+  cout << greeting << " has "  << strlen(greeting) << " chars" << endl;
+}
 
 Strings::Strings() {
   cout << "\n" << endl;

@@ -10,6 +10,7 @@ public:
   void stringExample();
   void strcpyExample();
   void strcatExample();
+  void strlenExample();
   Strings();
   ~Strings();
 };
