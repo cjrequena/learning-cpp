@@ -5,9 +5,8 @@
 #ifndef LEARNING_CPP_SRC_POINTERS_POINTERS_HPP_
 #define LEARNING_CPP_SRC_POINTERS_POINTERS_HPP_
 
-class Pointers
-{
-public:
+class Pointers {
+ public:
   void declaringPointerExample();
   void printVariableAddressExample();
   void nullPointerExample();
@@ -18,7 +17,7 @@ public:
   void arrayOfPointersToCharacterExample();
   void pointerToPointerExample();
   void passingPointersToFunctionsExample(unsigned long *par);
-  int * returnPointerFromFunctionsExample();
+  int *returnPointerFromFunctionsExample();
   Pointers();
   ~Pointers();
 };

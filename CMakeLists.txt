@@ -26,5 +26,12 @@ add_executable(
         src/storageclasses/StorageClasses.hpp
         src/modifiertypes/ModifierTypes.cpp
         src/modifiertypes/ModifierTypes.hpp
-        src/numbers/Numbers.cpp src/numbers/Numbers.hpp
-        src/arrays/Arrays.cpp src/arrays/Arrays.hpp src/strings/Strings.cpp src/strings/Strings.hpp)
+        src/numbers/Numbers.cpp
+        src/numbers/Numbers.hpp
+        src/arrays/Arrays.cpp
+        src/arrays/Arrays.hpp
+        src/strings/Strings.cpp
+        src/strings/Strings.hpp
+        src/references/References.cpp
+        src/references/References.hpp
+)

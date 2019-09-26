@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include "references/References.hpp"
 #include "strings/Strings.hpp"
 #include "arrays/Arrays.hpp"
 #include "pointers/Pointers.hpp"
@@ -142,5 +143,8 @@ int main() {
   strings.strcmpExample();
   strings.strchrExample();
   strings.strstrExample();
+
+  // References
+  References references;
   return 0;
 }
