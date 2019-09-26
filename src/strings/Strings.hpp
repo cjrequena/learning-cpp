@@ -11,6 +11,9 @@ public:
   void strcpyExample();
   void strcatExample();
   void strlenExample();
+  void strcmpExample();
+  void strchrExample();
+  void strstrExample();
   Strings();
   ~Strings();
 };

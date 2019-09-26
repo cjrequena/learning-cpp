@@ -4,7 +4,7 @@
 // See: https://www.tutorialspoint.com/cplusplus/cpp_strings.htm
 
 #include <iostream>
-#include <cstring>
+#include <cstring> // http://www.cplusplus.com/reference/cstring/
 #include "Strings.hpp"
 using namespace std;
 
@@ -83,6 +83,48 @@ void Strings::strlenExample() {
   cout << "================================" << endl;
   char greeting[12] = "Hello World";
   cout << greeting << " has "  << strlen(greeting) << " chars" << endl;
+}
+
+//  strcmp(s1, s2);
+//  Returns 0 if s1 and s2 are the same; less than 0 if s1<s2; greater than 0 if s1>s2.
+void Strings::strcmpExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "strcmp example" << endl;
+  cout << "================================" << endl;
+  char str1[] = "1234";
+  char str2[] = "12345";
+
+  cout << strcmp(str1, str1) << endl; // returns 0
+  cout << strcmp(str1, str2) << endl; // returns < 0
+  cout << strcmp(str2, str1) << endl; // returns > 0
+}
+
+//  strchr(s1, ch);
+//  Returns a pointer to the first occurrence of character ch in string s1.
+void Strings::strchrExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "strchr example" << endl;
+  cout << "================================" << endl;
+  char *ptr;
+  char str[] ="Hello CPP, you look great";
+  ptr = strchr(str, 'C');
+  cout << ptr << endl; // prints CPP, you look great
+}
+
+//  strstr(s1, s2);
+//  Returns a pointer to the first occurrence of string s2 in string s1.
+void Strings::strstrExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "strstr example" << endl;
+  cout << "================================" << endl;
+  char str[] ="This is a simple string";
+  char *ptr;
+  ptr = strstr (str, "simple");
+  strncpy (ptr, "sample", 6);
+  puts (str); // prints This is a sample string
 }
 
 Strings::Strings() {
