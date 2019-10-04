@@ -146,5 +146,22 @@ int main() {
 
   // References
   References references;
+  references.declaringReferenceExample();
+
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "declaring reference example" << endl;
+  cout << "================================" << endl;
+  cout << "Before swap, value of a :" << a << endl;
+  cout << "Before swap, value of b :" << b << endl;
+  /* calling a function to swap the values.*/
+  references.callByReferenceExample(a, b);
+  cout << "After swap, value of a :" << a << endl;
+  cout << "After swap, value of b :" << b << endl;
+
+  double vals[] = {10.1, 12.6, 33.1, 24.1, 50.0};
+  references.returnReferenceFromFunctionExample(vals, 0) = 36.9;
+  cout << vals[0] << endl;
+
   return 0;
 }

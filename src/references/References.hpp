@@ -7,7 +7,9 @@
 
 class References {
  public:
-
+  void declaringReferenceExample();
+  void callByReferenceExample(int &x, int &y);
+  double &returnReferenceFromFunctionExample(double vals[], int i);
   References();
   ~References();
 };
