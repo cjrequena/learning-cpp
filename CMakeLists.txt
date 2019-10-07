@@ -34,4 +34,6 @@ add_executable(
         src/strings/Strings.hpp
         src/references/References.cpp
         src/references/References.hpp
+        src/datetime/DateTime.cpp
+        src/datetime/DateTime.hpp
 )
