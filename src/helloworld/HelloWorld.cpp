@@ -7,10 +7,10 @@
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
 void HelloWorld::helloWorld() {
-    printf("\n");
-    printf("================================\n");
-    printf("print Hello, World!\n");
-    printf("================================\n");
+    cout << "\n" << endl;
+    cout << "================================" << endl;
+    cout << "helloWorld example" << endl;
+    cout << "================================" << endl;
     std::cout << "Hello, World!" << std::endl;
 }
 
