@@ -41,16 +41,16 @@ void::ControlFlows::forLoopExample() {
   for (i = 1; i <= 100; i++) {
     cumSum = cumSum + i;
   }
-  printf("the cumulative sum up to 100 is %d\n", cumSum);
+  cout << "the cumulative sum up to 100 is " << cumSum << endl;
 
   // A most efficient way
   int n = 1;
   int p = 100;
   int x = n * (p * (p + 1)) / 2;
-  printf("%d\n", x);
+  cout << x << endl;
 
   int y = (p * (n + p)) / 2; // Carl Gauss formula
-  printf("%d\n", y);
+  cout << y << endl;
 }
 
 // While Loop:
@@ -82,9 +82,9 @@ void ::ControlFlows::whileLoopExample() {
   // another while loop
   int number = 0;
   while (number != 999) {
-    printf("Enter an integer or 999 to stop: ");
+    cout << "Enter an integer or 999 to stop: " << endl;
     scanf("%i", &number);
-    printf("%d x 10 = %d\n", number, number * 10);
+    cout << number << " x 10 = " << number * 10 << endl;
   }
 }
 
@@ -116,9 +116,9 @@ void ::ControlFlows::doWhileLoopExample() {
   // another do-while loop
   int number = 0;
   do {
-    printf("Enter an integer or 0 to stop: ");
+    cout << "Enter an integer or 0 to stop: " << endl;
     scanf("%i", &number);
-    printf("%d x 10 = %d\n", number, number * 10);
+    cout << number << " x 10 = " << number * 10 << endl;
   } while (number != 999);
 }
 
@@ -271,7 +271,7 @@ void ::ControlFlows::ifStatementExample() {
   int i;
   for (i = 1; i <= 10; i++) {
     if ((i % 2) != 0) {
-      printf("%d is odd\n", i);
+      cout << i << " is odd" << endl;
     }
   }
 }
@@ -287,9 +287,9 @@ void ::ControlFlows::elseStatementExample() {
   int i;
   for (i = 1; i <= 10; i++) {
     if ((i % 2) != 0) {
-      printf("%d is odd\n", i);
+      cout << i << " is odd" << endl;
     } else {
-      printf("%d is even\n", i);
+      cout << i << " is even" << endl;
     }
   }
 }
@@ -304,16 +304,16 @@ void ::ControlFlows::elseIfStatementExample() {
   cout << "else if statement example" << endl;
   cout << "================================" << endl;
   int number;
-  printf("enter an integer: ");
+ cout << "enter an integer: " << endl;
   scanf("%i", &number);
   if (number < 0) {
-    printf("the integer %d is negative\n", number);
+    cout << "the integer " << number << " is negative" << endl;
   } else if (number > 0) {
-    printf("the integer %d is positive\n", number);
+    cout << "the integer " << number << " is positive" << endl;
   } else if (number == 0) {
-    printf("the integer %d is zero\n", number);
+    cout << "the integer " << number << " is zero" << endl;
   } else {
-    printf("this statement should never be executed!\n");
+    cout << "this statement should never be executed!" << endl;
   }
 }
 
@@ -329,6 +329,7 @@ void  ControlFlows::conditionalOperatorExample() {
   cout << "================================" << endl;
   int i;
   for (i = 1; i <= 10; i++) {
+    (i % 2) ? printf("%d is odd\n", i) : printf("%d is even\n", i);
     (i % 2) ? printf("%d is odd\n", i) : printf("%d is even\n", i);
   }
 }
