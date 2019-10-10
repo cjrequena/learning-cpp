@@ -176,7 +176,12 @@ void ::DataTypes::arithmeticOperatorsExample() {
     result1 = a * b + c * d;
     result2 = (a * b) + (c * d);
     result3 = a * (b + c) * d;
-    printf("result1=%d, result2=%d, result3=%d\n", result1, result2, result3);
+
+    cout
+    << "result1=" << result1 << ", "
+    << "result2=" << result2 << ", "
+    << "result3=" << result3
+    << endl;
 }
 
 //Relational and Logical Operators
@@ -262,8 +267,9 @@ void::DataTypes::typeCastingExample() {
     cout << "================================" << endl;
     int a = 2;
     int b = 3;
-    printf("a / b = %.3f\n", a/b);
-    printf("a / b = %.3f\n", (double) a/b);
+    cout << "a / b = " << setprecision(3) << fixed << (double) a/b << endl;
+    cout << "a / b = " << setprecision(3) << fixed << (float) a/b << endl;
+    cout << "a / b = " << setprecision(3) << fixed << (int) a/b << endl;
 }
 
 // String Conversion Library Functions
