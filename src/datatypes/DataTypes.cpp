@@ -94,40 +94,40 @@ void DataTypes::printEnumerationConstants() {
         JAN = 1, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC
     };
     months theMonth = JAN;
-    printf("JAN %d\n", theMonth);
+    cout << "JAN " <<  theMonth << endl;
 
     theMonth = FEB;
-    printf("FEB %d\n", theMonth);
+    cout << "FEB " << theMonth << endl;
 
     theMonth = MAR;
-    printf("MAR %d\n", theMonth);
+    cout << "MAR " << theMonth << endl;
 
     theMonth = APR;
-    printf("APR %d\n", theMonth);
+    cout << "APR " <<  theMonth << endl;
 
     theMonth = MAY;
-    printf("MAY %d\n", theMonth);
+    cout << "MAY " <<  theMonth << endl;
 
     theMonth = JUN;
-    printf("JUN %d\n", theMonth);
+    cout << "JUN " <<  theMonth << endl;
 
     theMonth = JUL;
-    printf("JUL %d\n", theMonth);
+    cout << "JUL " <<  theMonth << endl;
 
     theMonth = AUG;
-    printf("AUG %d\n", theMonth);
+    cout << "AUG " <<  theMonth << endl;
 
     theMonth = SEP;
-    printf("SEP %d\n", theMonth);
+    cout << "SEP " <<  theMonth << endl;
 
     theMonth = OCT;
-    printf("OCT %d\n", theMonth);
+    cout << "OCT " << theMonth << endl;
 
     theMonth = NOV;
-    printf("NOV %d\n", theMonth);
+    cout << "NOV " << theMonth << endl;
 
     theMonth = DEC;
-    printf("DEC %d\n", theMonth);
+    cout << "DEC " << theMonth << endl;
 }
 
 
