@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
+#include <iomanip>
 #include "DataTypes.hpp"
 
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
@@ -200,7 +201,6 @@ void DataTypes::incrementAndDecrementVariableExample() {
 
     int a = 0;
     int b = 0;
-    cout << x << endl;
     cout << "postfix operator " << endl;
     cout << "a=" << a << ", b=" << b << endl;
     cout << "a++ =" << a++ << ", b-- =" << b-- << endl;
@@ -239,7 +239,15 @@ void::DataTypes::typeConversionsExample() {
     double d = a / b;
     int e = a * b;
     int f = a / b;
-    printf("a=%d, b=%.3f, c=%.3f, d=%.3f, e=%d, f=%d\n",a, b, c, d, e, f);
+
+    cout
+    << "a=" << a << ", "
+    << "b=" << setprecision(3) << fixed << b << ", "
+    << "c=" << setprecision(3) << fixed << c << ", "
+    << "d=" << setprecision(3) << fixed << d << ", "
+    << "e=" << e << ", "
+    << "f=" << f
+    << endl;
 }
 
 // Explicit Type Conversion
