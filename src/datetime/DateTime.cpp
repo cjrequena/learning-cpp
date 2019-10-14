@@ -104,6 +104,9 @@ void DateTime::dateTimeFunctionsExample() {
   ltm = gmtime(&now);
   cout << "tm ltm = gmtime(&now) : " << ltm << endl;
 
+  now =  mktime(ltm);
+  cout << "time_t now =  mktime(ltm) : " << now << endl;
+
 }
 
 DateTime::DateTime() {
