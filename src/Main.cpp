@@ -1,5 +1,6 @@
 #include <iostream>
 #include <array>
+#include "datetime/DateTime.hpp";
 #include "references/References.hpp"
 #include "strings/Strings.hpp"
 #include "arrays/Arrays.hpp"
@@ -162,6 +163,10 @@ int main() {
   double vals[] = {10.1, 12.6, 33.1, 24.1, 50.0};
   references.returnReferenceFromFunctionExample(vals, 0) = 36.9;
   cout << vals[0] << endl;
+
+  // Datetime
+  DateTime datetime;
+  datetime.dateTimeFunctionsExample();
 
   return 0;
 }
