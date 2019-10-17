@@ -128,11 +128,11 @@ void DateTime::dateTimeFunctionsExample() {
   strftime(date_string, 50, "Today is %B %d, %Y", ltm);
   strftime(time_string, 50, "Current time is %T", ltm);
 
-  strftime(date_string, 50, "Last year was %B %d, %Y", &lastYeartm);
-  strftime(time_string, 50, "Last time was %T", &lastYeartm);
-
   cout << date_string << endl;
   cout << time_string << endl;
+
+  strftime(date_string, 50, "Last year was %B %d, %Y", &lastYeartm);
+  strftime(time_string, 50, "Last time was %T", &lastYeartm);
 
   cout << date_string << endl;
   cout << time_string << endl;
