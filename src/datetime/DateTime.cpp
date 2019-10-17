@@ -4,8 +4,8 @@
 // see: https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
 
 #include "DateTime.hpp"
-#include <iostream>;
-#include <ctime>;
+#include <iostream>
+#include <ctime>
 
 using namespace std;
 
@@ -80,12 +80,13 @@ void DateTime::dateTimeFunctionsExample() {
   cout << "================================" << endl;
 
   time_t now = time(0);
-  cout << "current date/time based on current system: " << now << endl;
+  cout << "time_t now = time(0); -> " << now << endl;
 
   char *nowStr = ctime(&now);
-  cout << "The local date and time is: " << nowStr << endl;
+  cout << "char *nowStr = ctime(&now); -> " << nowStr << endl;
 
   tm *ltm = localtime(&now);
+  cout << "tm *ltm = localtime(&now); -> "<< ltm << endl;
   cout << "Year: " << 1900 + ltm->tm_year << endl;
   cout << "Month: " << 1 + ltm->tm_mon << endl;
   cout << "Day: " << ltm->tm_mday << endl;
@@ -95,25 +96,31 @@ void DateTime::dateTimeFunctionsExample() {
   cout << "" << endl;
 
   clock_t clk = clock();
-  cout << "clock_t clk = clock() : " << clk << endl;
+  cout << "clock_t clk = clock(); -> " << clk << endl;
 
   nowStr = asctime(ltm);
-  cout << "char*  nowStr = asctime ( ltm ) : " << nowStr << endl;
+  cout << "char*  nowStr = asctime ( ltm ); -> " << nowStr << endl;
 
   ltm = gmtime(&now);
-  cout << "tm ltm = gmtime(&now) : " << ltm << endl;
+  cout << "tm ltm = gmtime(&now); -> " << ltm << endl;
 
   now = mktime(ltm);
-  cout << "time_t now =  mktime(ltm) : " << now << endl;
+  cout << "time_t now =  mktime(ltm) -> " << now << endl;
 
-  tm *lastYearTm = ltm;
-  lastYearTm->tm_year = ltm->tm_year - 1;
+  struct tm y2ktm = {0};
+  y2ktm.tm_hour = 0; y2ktm.tm_min = 0; y2ktm.tm_sec = 0;
+  y2ktm.tm_year = 100; y2ktm.tm_mon = 0; y2ktm.tm_mday = 1;
+  time_t y2k = mktime(&y2ktm);
 
-  time_t lastYear = mktime(lastYearTm);
-  cout << "Last year: " << asctime(ltm) << endl;
+  double dif = difftime ( now, y2k );
+  cout << "The difference between now and y2k in seconds is: " << dif << endl;
 
-  double dif = difftime ( now, lastYear );
-  cout << "The difference between now and last year in seconds is: " << dif << endl;
+  struct tm lastYeartm = {0};
+  lastYeartm = *ltm;
+  lastYeartm.tm_year = ltm->tm_year -1;
+
+  dif = difftime ( now, mktime(&lastYeartm) );
+  cout << "The difference between now and lastYear in seconds is: " << dif << endl;
 
   char date_string[100];
   char time_string[100];
@@ -121,9 +128,20 @@ void DateTime::dateTimeFunctionsExample() {
   strftime(date_string, 50, "Today is %B %d, %Y", ltm);
   strftime(time_string, 50, "Current time is %T", ltm);
 
+  strftime(date_string, 50, "Last year was %B %d, %Y", &lastYeartm);
+  strftime(time_string, 50, "Last time was %T", &lastYeartm);
+
   cout << date_string << endl;
   cout << time_string << endl;
 
+  cout << date_string << endl;
+  cout << time_string << endl;
+
+  strftime(date_string, 50, "Y2k was %B %d, %Y", &y2ktm);
+  strftime(time_string, 50, "Y2k time was %T", &y2ktm);
+
+  cout << date_string << endl;
+  cout << time_string << endl;
 }
 
 DateTime::DateTime() {
