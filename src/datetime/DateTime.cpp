@@ -82,30 +82,47 @@ void DateTime::dateTimeFunctionsExample() {
   time_t now = time(0);
   cout << "current date/time based on current system: " << now << endl;
 
-  char* nowStr = ctime(&now);
+  char *nowStr = ctime(&now);
   cout << "The local date and time is: " << nowStr << endl;
 
   tm *ltm = localtime(&now);
-  cout << "Year: " << 1900 + ltm->tm_year<<endl;
-  cout << "Month: " << 1 + ltm->tm_mon<< endl;
-  cout << "Day: " <<  ltm->tm_mday << endl;
+  cout << "Year: " << 1900 + ltm->tm_year << endl;
+  cout << "Month: " << 1 + ltm->tm_mon << endl;
+  cout << "Day: " << ltm->tm_mday << endl;
   cout << "Time: " << 1 + ltm->tm_hour << ":";
   cout << 1 + ltm->tm_min << ":";
   cout << 1 + ltm->tm_sec << endl;
   cout << "" << endl;
 
-
-  clock_t  clk = clock();
+  clock_t clk = clock();
   cout << "clock_t clk = clock() : " << clk << endl;
 
-  nowStr = asctime ( ltm );
+  nowStr = asctime(ltm);
   cout << "char*  nowStr = asctime ( ltm ) : " << nowStr << endl;
 
   ltm = gmtime(&now);
   cout << "tm ltm = gmtime(&now) : " << ltm << endl;
 
-  now =  mktime(ltm);
+  now = mktime(ltm);
   cout << "time_t now =  mktime(ltm) : " << now << endl;
+
+  tm *lastYearTm = ltm;
+  lastYearTm->tm_year = ltm->tm_year - 1;
+
+  time_t lastYear = mktime(lastYearTm);
+  cout << "Last year: " << asctime(ltm) << endl;
+
+  double dif = difftime ( now, lastYear );
+  cout << "The difference between now and last year in seconds is: " << dif << endl;
+
+  char date_string[100];
+  char time_string[100];
+
+  strftime(date_string, 50, "Today is %B %d, %Y", ltm);
+  strftime(time_string, 50, "Current time is %T", ltm);
+
+  cout << date_string << endl;
+  cout << time_string << endl;
 
 }
 
