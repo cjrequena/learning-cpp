@@ -6,6 +6,7 @@
 #include "DateTime.hpp"
 #include <iostream>
 #include <ctime>
+#include <thread>
 
 using namespace std;
 
@@ -86,7 +87,7 @@ void DateTime::dateTimeFunctionsExample() {
   cout << "char *nowStr = ctime(&now); -> " << nowStr << endl;
 
   tm *ltm = localtime(&now);
-  cout << "tm *ltm = localtime(&now); -> "<< ltm << endl;
+  cout << "tm *ltm = localtime(&now); -> " << ltm << endl;
   cout << "Year: " << 1900 + ltm->tm_year << endl;
   cout << "Month: " << 1 + ltm->tm_mon << endl;
   cout << "Day: " << ltm->tm_mday << endl;
@@ -108,18 +109,22 @@ void DateTime::dateTimeFunctionsExample() {
   cout << "time_t now =  mktime(ltm) -> " << now << endl;
 
   struct tm y2ktm = {0};
-  y2ktm.tm_hour = 0; y2ktm.tm_min = 0; y2ktm.tm_sec = 0;
-  y2ktm.tm_year = 100; y2ktm.tm_mon = 0; y2ktm.tm_mday = 1;
+  y2ktm.tm_hour = 0;
+  y2ktm.tm_min = 0;
+  y2ktm.tm_sec = 0;
+  y2ktm.tm_year = 100;
+  y2ktm.tm_mon = 0;
+  y2ktm.tm_mday = 1;
   time_t y2k = mktime(&y2ktm);
 
-  double dif = difftime ( now, y2k );
+  double dif = difftime(now, y2k);
   cout << "The difference between now and y2k in seconds is: " << dif << endl;
 
   struct tm lastYeartm = {0};
   lastYeartm = *ltm;
-  lastYeartm.tm_year = ltm->tm_year -1;
+  lastYeartm.tm_year = ltm->tm_year - 1;
 
-  dif = difftime ( now, mktime(&lastYeartm) );
+  dif = difftime(now, mktime(&lastYeartm));
   cout << "The difference between now and lastYear in seconds is: " << dif << endl;
 
   char date_string[100];
@@ -142,6 +147,72 @@ void DateTime::dateTimeFunctionsExample() {
 
   cout << date_string << endl;
   cout << time_string << endl;
+}
+
+// http://www.cplusplus.com/reference/ctime/time/
+void DateTime::timeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "time example" << endl;
+  cout << "================================" << endl;
+  time_t
+      timer; // This returns the current calendar time of the system in number of seconds elapsed since January 1, 1970. If the system has no time, .1 is returned.
+  struct tm y2k = {0};
+  double seconds;
+
+  y2k.tm_hour = 0;
+  y2k.tm_min = 0;
+  y2k.tm_sec = 0;
+  y2k.tm_year = 100;
+  y2k.tm_mon = 0;
+  y2k.tm_mday = 1;
+
+  time(&timer);  /* get current time; same as: timer = time(NULL)  */
+
+  seconds = difftime(timer, mktime(&y2k));
+
+  cout << seconds << " seconds since January 1, 2000 in the current timezone" << endl;
+}
+
+// http://www.cplusplus.com/reference/ctime/ctime/
+void DateTime::ctimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "ctime example" << endl;
+  cout << "================================" << endl;
+  time_t rawtime;
+  time(&rawtime);
+  cout << "The current local time is: " << ctime(&rawtime) << endl;
+}
+
+//  http://www.cplusplus.com/reference/ctime/localtime/
+void DateTime::localtimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "localtime example" << endl;
+  cout << "================================" << endl;
+  time_t rawtime;
+  struct tm *timeinfo;
+  time(&rawtime);
+  timeinfo = localtime(&rawtime); // Convert time_t to tm as local time
+  cout << "Current local time and date: " << asctime(timeinfo) << endl;
+}
+
+// http://www.cplusplus.com/reference/ctime/clock/
+void DateTime::clockExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "clock example" << endl;
+  cout << "================================" << endl;
+  clock_t clk;
+  clk = clock();
+  DateTime::_sleep();
+  clk = clock() - clk;
+  cout << "Clock took " << (double)clk << " clicks " << ((float) clk / CLOCKS_PER_SEC) << " seconds " << endl;
+}
+
+void DateTime::_sleep(){
+  std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
 
 DateTime::DateTime() {

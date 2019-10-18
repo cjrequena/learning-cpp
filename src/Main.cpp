@@ -167,6 +167,10 @@ int main() {
   // Datetime
   DateTime datetime;
   datetime.dateTimeFunctionsExample();
+  datetime.timeExample();
+  datetime.ctimeExample();
+  datetime.localtimeExample();
+  datetime.clockExample();
 
   return 0;
 }

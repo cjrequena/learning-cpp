@@ -6,8 +6,14 @@
 #define LEARNING_CPP_SRC_DATETIME_DATETIME_HPP_
 
 class DateTime {
+ private:
+  void _sleep();
  public:
   void dateTimeFunctionsExample();
+  void timeExample();
+  void ctimeExample();
+  void localtimeExample();
+  void clockExample();
   DateTime();
   ~DateTime();
 };
