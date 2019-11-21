@@ -283,6 +283,48 @@ void DateTime::mktimeExample() {
 
 }
 
+// http://www.cplusplus.com/reference/ctime/difftime/
+void DateTime::difftimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "difftime example" << endl;
+  cout << "================================" << endl;
+
+  time_t now;
+  struct tm newyear;
+  double seconds;
+
+  time(&now);  /* get current time; same as: now = time(NULL)  */
+
+  newyear = *localtime(&now);
+
+  newyear.tm_hour = 0; newyear.tm_min = 0; newyear.tm_sec = 0;
+  newyear.tm_mon = 0;  newyear.tm_mday = 1;
+
+  seconds = difftime(now,mktime(&newyear));
+
+  cout << "seconds since new year in the current timezone. " <<  seconds << endl;
+
+}
+
+// http://www.cplusplus.com/reference/ctime/strftime/
+void DateTime::strftimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "strftime example" << endl;
+  cout << "================================" << endl;
+  time_t rawtime;
+  struct tm * timeinfo;
+  char buffer [80];
+
+  time (&rawtime);
+  timeinfo = localtime (&rawtime);
+
+  strftime (buffer,80,"Now it's %I:%M%p.",timeinfo);
+  puts (buffer);
+
+}
+
 void DateTime::_sleep(){
   std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }

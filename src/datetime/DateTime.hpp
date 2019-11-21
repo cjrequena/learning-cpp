@@ -17,6 +17,8 @@ class DateTime {
   void asctimeExample(); // asctime Convert tm structure to string
   void gmtimeExample(); // gmtime Convert time_t to tm as UTC time
   void mktimeExample(); // mktime Convert tm structure to time_t
+  void difftimeExample();  // difftime  Calculates the difference in seconds between beginning and end.
+  void strftimeExample(); // strftime Format time as string Copies into ptr the content of format, expanding its format specifiers into the corresponding values that represent the time described in timeptr, with a limit of maxsize characters.
   DateTime();
   ~DateTime();
 };

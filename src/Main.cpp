@@ -174,6 +174,8 @@ int main() {
   datetime.asctimeExample();
   datetime.gmtimeExample();
   datetime.mktimeExample();
+  datetime.difftimeExample();
+  datetime.strftimeExample();
 
   return 0;
 }
