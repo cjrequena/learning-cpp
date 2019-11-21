@@ -171,6 +171,8 @@ int main() {
   datetime.ctimeExample();
   datetime.localtimeExample();
   datetime.clockExample();
+  datetime.asctimeExample();
+  datetime.gmtimeExample();
 
   return 0;
 }

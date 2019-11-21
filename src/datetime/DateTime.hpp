@@ -14,6 +14,8 @@ class DateTime {
   void ctimeExample();
   void localtimeExample();
   void clockExample();
+  void asctimeExample();
+  void gmtimeExample();
   DateTime();
   ~DateTime();
 };

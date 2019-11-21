@@ -211,6 +211,42 @@ void DateTime::clockExample() {
   cout << "Clock took " << (double)clk << " clicks " << ((float) clk / CLOCKS_PER_SEC) << " seconds " << endl;
 }
 
+// http://www.cplusplus.com/reference/ctime/asctime/
+void DateTime::asctimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "asctime example" << endl;
+  cout << "================================" << endl;
+  time_t rawtime;
+  struct tm * timeinfo;
+  time ( &rawtime );
+  timeinfo = localtime ( &rawtime );
+  cout << "The current date/time is: " <<   asctime (timeinfo) << endl;
+}
+
+
+#define MST (-7)
+#define UTC (0)
+#define CCT (+8)
+// http://www.cplusplus.com/reference/ctime/gmtime/
+void DateTime::gmtimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "gmtime example" << endl;
+  cout << "================================" << endl;
+  time_t rawtime;
+  struct tm * ptm;
+
+  time ( &rawtime );
+
+  ptm = gmtime ( &rawtime );
+
+  cout << "Current time around the World:" << endl;
+  cout << "Phoenix, AZ (U.S.) : " << (ptm->tm_hour+MST)%24 << ":" << ptm->tm_min <<endl;
+  cout << "Reykjavik (Iceland) : " << (ptm->tm_hour+UTC)%24 << ":" << ptm->tm_min <<endl;
+  cout << "Beijing (China) : " << (ptm->tm_hour+CCT)%24 << ":" << ptm->tm_min <<endl;
+}
+
 void DateTime::_sleep(){
   std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 }
