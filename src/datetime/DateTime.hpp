@@ -10,12 +10,13 @@ class DateTime {
   void _sleep();
  public:
   void dateTimeFunctionsExample();
-  void timeExample();
-  void ctimeExample();
-  void localtimeExample();
-  void clockExample();
-  void asctimeExample();
-  void gmtimeExample();
+  void timeExample(); // time  Get the current calendar time as a value of type time_t.
+  void ctimeExample(); // ctime Convert time_t value to string
+  void localtimeExample(); // localtime Convert time_t to tm as local time
+  void clockExample(); // clock Returns the processor time consumed by the program
+  void asctimeExample(); // asctime Convert tm structure to string
+  void gmtimeExample(); // gmtime Convert time_t to tm as UTC time
+  void mktimeExample(); // mktime Convert tm structure to time_t
   DateTime();
   ~DateTime();
 };

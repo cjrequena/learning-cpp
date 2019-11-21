@@ -173,6 +173,7 @@ int main() {
   datetime.clockExample();
   datetime.asctimeExample();
   datetime.gmtimeExample();
+  datetime.mktimeExample();
 
   return 0;
 }

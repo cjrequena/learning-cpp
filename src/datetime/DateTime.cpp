@@ -206,7 +206,7 @@ void DateTime::clockExample() {
   cout << "================================" << endl;
   clock_t clk;
   clk = clock();
-  DateTime::_sleep();
+  //DateTime::_sleep();
   clk = clock() - clk;
   cout << "Clock took " << (double)clk << " clicks " << ((float) clk / CLOCKS_PER_SEC) << " seconds " << endl;
 }
@@ -245,6 +245,42 @@ void DateTime::gmtimeExample() {
   cout << "Phoenix, AZ (U.S.) : " << (ptm->tm_hour+MST)%24 << ":" << ptm->tm_min <<endl;
   cout << "Reykjavik (Iceland) : " << (ptm->tm_hour+UTC)%24 << ":" << ptm->tm_min <<endl;
   cout << "Beijing (China) : " << (ptm->tm_hour+CCT)%24 << ":" << ptm->tm_min <<endl;
+}
+
+// http://www.cplusplus.com/reference/ctime/mktime/
+void DateTime::mktimeExample() {
+  cout << "" << endl;
+  cout << "================================" << endl;
+  cout << "mktime example" << endl;
+  cout << "================================" << endl;
+
+  time_t rawtime;
+  struct tm * timeinfo;
+  int year, month ,day;
+  const char * weekday[] = { "Sunday", "Monday",
+                             "Tuesday", "Wednesday",
+                             "Thursday", "Friday", "Saturday"};
+
+  /* prompt user for date */
+  cout << "Enter year: ";
+  fflush(stdout); scanf ("%d",&year);
+  cout << "Enter month: ";
+  fflush(stdout); scanf ("%d",&month);
+  cout << "Enter day: ";
+  fflush(stdout); scanf ("%d",&day);
+
+  /* get current timeinfo and modify it to the user's choice */
+  time ( &rawtime );
+  timeinfo = localtime ( &rawtime );
+  timeinfo->tm_year = year - 1900;
+  timeinfo->tm_mon = month - 1;
+  timeinfo->tm_mday = day;
+
+  /* call mktime: timeinfo->tm_wday will be set */
+  mktime ( timeinfo );
+
+  cout  << "That day is a " <<  weekday[timeinfo->tm_wday] << endl;
+
 }
 
 void DateTime::_sleep(){
