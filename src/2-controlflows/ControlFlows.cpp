@@ -1,34 +1,79 @@
 //
 // Created by carlosjose.requena on 13/08/2019.
 //
+
 #include <stdio.h>
 #include <iostream>
 #include <sstream>
 #include <random>
 #include <time.h>
 #include "ControlFlows.hpp"
-using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
+using namespace std;
 
-//Loops:
-//One of the most useful properties of progammable computers is that you can ask them to repeat a calculation and/or
-//operation many many times, and they will not (usually) complain. The looping constructs in C allow us to repeatedly
-//execute a block of code many times, without having to manually re-type or re-list the code by hand.
-
-//For Loop:
-//A generic for-loop looks like this:
-//for (init_expression; loop_condition; loop_expression) {
-//program_statements
-//}
-
-// The three expressions inside the round brackets set up the environment for the loop. The init_expression is executed
-// before the loop starts and is typically where you define some initial value that will change each time through the loop.
-// The loop_condition is an expression that determines whether the loop should continue, or stop. Of course if you don't
-// specify a condition under which the loop should stop, it never will, and you will have an endless loop and your program
-// will never terminate. The loop_expression specifies code that is executed each time through the loop, after the body
-// of the loop is executed. This is all very abstract, so let's see a concrete example, by coding a loop to implement
-// the cumulative sum as above.
-
-// see: https://www.tutorialspoint.com/cplusplus/cpp_for_loop.htm
+/**
+ * # Loops in C++
+ *
+ * One of the most useful properties of programmable computers is that you can ask them to **repeat a calculation
+ * or operation many times**, and they will not (usually) complain.  
+ *
+ * The **looping constructs** in C++ allow us to repeatedly execute a block of code without having to manually
+ * re-type or duplicate the code.
+ *
+ * ---
+ *
+ * ## `for` Loop
+ *
+ * A generic **for loop** looks like this:
+ *
+ * ```cpp
+ * for (init_expression; loop_condition; loop_expression) {
+ *     program_statements;
+ * }
+ * ```
+ *
+ * ### Components
+ * - **`init_expression`**  
+ *   Executed once before the loop starts.  
+ *   Typically used to define and initialize a loop counter variable.
+ *
+ * - **`loop_condition`**  
+ *   Evaluated before each iteration.  
+ *   If `true`, the loop body executes. If `false`, the loop stops.  
+ *   ⚠️ If you never provide a stopping condition, you’ll create an **infinite loop**.
+ *
+ * - **`loop_expression`**  
+ *   Executed after each iteration of the loop body.  
+ *   Typically used to update the loop counter.
+ *
+ * ---
+ *
+ * ## Example: Cumulative Sum
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int sum = 0;
+ *
+ *     for (int i = 1; i <= 10; i++) {
+ *         sum += i;
+ *     }
+ *
+ *     cout << "Cumulative sum of 1 to 10 is: " << sum << endl;
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * Cumulative sum of 1 to 10 is: 55
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ For Loop](https://www.tutorialspoint.com/cplusplus/cpp_for_loop.htm)
+ */
 
 void::ControlFlows::forLoopExample() {
   cout << "" << endl;
@@ -53,17 +98,56 @@ void::ControlFlows::forLoopExample() {
   cout << y << endl;
 }
 
-// While Loop:
-// The while-loop is another looping construct that you might find more appropriate than a for-loop under some circumstances.
-// A while-loop looks like this:
-//while (conditional_expression) {
-//program_statements;
-//}
-// The while-loop will first check the value of the conditional_expression, and if it is not FALSE (i.e. if the expression
-// returns a non-zero (non-FALSE) result, the program_statement (or multiple statements) will be executed once. Afterwards
-// the conditional_expression will be evaluated again, and if it returns a non-zero result, the program_statment (or multiple statements)
-// will be executed again, and so on. The while-loop will stop only when the conditional_expression returns zero.
-// see: https://www.tutorialspoint.com/cplusplus/cpp_while_loop.htm
+/**
+ * # While Loop in C++
+ *
+ * The **while-loop** is another looping construct that can be more appropriate than a `for` loop in certain situations.
+ * 
+ * A generic while-loop looks like this:
+ *
+ * ```cpp
+ * while (conditional_expression) {
+ *     program_statements;
+ * }
+ * ```
+ *
+ * ### How it works
+ * 1. The loop first evaluates the `conditional_expression`.  
+ * 2. If the expression is **non-zero** (true), the loop body executes once.  
+ * 3. After executing the body, the `conditional_expression` is evaluated again.  
+ * 4. Steps 2–3 repeat until the expression evaluates to **zero** (false).  
+ *
+ * ⚠️ The loop will **stop only when the conditional_expression returns zero**.  
+ * If the expression never becomes zero, the loop will run **indefinitely** (infinite loop).
+ *
+ * ---
+ *
+ * ## Example: Print numbers 1 to 5
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int i = 1;
+ *     while (i <= 5) {
+ *         cout << i << " ";
+ *         i++;
+ *     }
+ *     cout << endl;
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 1 2 3 4 5
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ While Loop](https://www.tutorialspoint.com/cplusplus/cpp_while_loop.htm)
+ */
 
 void ::ControlFlows::whileLoopExample() {
   cout << "" << endl;
@@ -88,17 +172,60 @@ void ::ControlFlows::whileLoopExample() {
   }
 }
 
-//Do-While Loop
-// There is another version of a while-loop that is essentially the same as a while-loop but it reverses the order of the
-// program_statement and conditional_expression.
-// Unlike for and while loops, which test the loop condition at the top of the loop, the do...while loop checks its condition at the bottom of the loop.
-// A do...while loop is similar to a while loop, except that a do...while loop is guaranteed to execute at least one time.
-// The syntax of a do...while loop in C++ is −
-//do {
-//statement(s);
-//}
-//while( condition );
-//see: https://www.tutorialspoint.com/cplusplus/cpp_do_while_loop.htm
+/**
+ * # Do-While Loop in C++
+ *
+ * The **do…while loop** is a variant of the while-loop that **reverses the order** of execution:
+ * the loop body executes first, and the condition is checked afterward.
+ *
+ * Unlike `for` and `while` loops, which test the loop condition at the **top** of the loop, 
+ * a `do…while` loop checks its condition at the **bottom**.  
+ * This guarantees that the loop body executes **at least once**, even if the condition is initially false.
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * do {
+ *     statement(s);
+ * } while (condition);
+ * ```
+ *
+ * ### How it works
+ * 1. Execute the statements inside the `do` block.  
+ * 2. Evaluate the `condition`.  
+ * 3. If the condition is **true** (non-zero), repeat step 1.  
+ * 4. If the condition is **false** (zero), exit the loop.
+ *
+ * ---
+ *
+ * ## Example: Print numbers 1 to 5
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int i = 1;
+ *     do {
+ *         cout << i << " ";
+ *         i++;
+ *     } while (i <= 5);
+ *     cout << endl;
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 1 2 3 4 5
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Do-While Loop](https://www.tutorialspoint.com/cplusplus/cpp_do_while_loop.htm)
+ */
 void ::ControlFlows::doWhileLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -122,34 +249,94 @@ void ::ControlFlows::doWhileLoopExample() {
   } while (number != 0);
 }
 
-// Nested loops:
-// A loop can be nested inside of another loop. C++ allows at least 256 levels of nesting.
 
-// The syntax for a nested for loop statement in C++ is as follows −
-//for ( init; condition; increment ) {
-//for ( init; condition; increment ) {
-//statement(s);
-//}
-//statement(s); // you can put more statements.
-//}
-
-//The syntax for a nested while loop statement in C++ is as follows −
-//while(condition) {
-//while(condition) {
-//statement(s);
-//}
-//statement(s); // you can put more statements.
-//}
-
-//The syntax for a nested do...while loop statement in C++ is as follows −
-//do {
-//statement(s); // you can put more statements.
-//do {
-//statement(s);
-//} while( condition );
-//
-//} while( condition );
-
+/**
+ * # Nested Loops in C++
+ *
+ * In C++, a loop can be **nested inside another loop**.  
+ * Nested loops allow you to perform repeated operations within repeated operations.  
+ * C++ allows at least **256 levels of nesting**, though excessive nesting is usually discouraged.
+ *
+ * ---
+ *
+ * ## Nested `for` Loop
+ *
+ * ```cpp
+ * for (init1; condition1; increment1) {
+ *     for (init2; condition2; increment2) {
+ *         statement(s);
+ *     }
+ *     statement(s); // Additional statements
+ * }
+ * ```
+ *
+ * Example: Print a 3x3 multiplication table
+ *
+ * ```cpp
+ * for (int i = 1; i <= 3; i++) {
+ *     for (int j = 1; j <= 3; j++) {
+ *         std::cout << i * j << " ";
+ *     }
+ *     std::cout << std::endl;
+ * }
+ * ```
+ *
+ * ---
+ *
+ * ## Nested `while` Loop
+ *
+ * ```cpp
+ * while (condition1) {
+ *     while (condition2) {
+ *         statement(s);
+ *     }
+ *     statement(s); // Additional statements
+ * }
+ * ```
+ *
+ * Example: Print numbers 1 to 3, three times
+ *
+ * ```cpp
+ * int i = 1;
+ * while (i <= 3) {
+ *     int j = 1;
+ *     while (j <= 3) {
+ *         std::cout << j << " ";
+ *         j++;
+ *     }
+ *     std::cout << std::endl;
+ *     i++;
+ * }
+ * ```
+ *
+ * ---
+ *
+ * ## Nested `do…while` Loop
+ *
+ * ```cpp
+ * do {
+ *     statement(s); // Additional statements
+ *     do {
+ *         statement(s);
+ *     } while (condition2);
+ * } while (condition1);
+ * ```
+ *
+ * Example: Print numbers 1 to 3, two times using `do…while`
+ *
+ * ```cpp
+ * int i = 1;
+ * do {
+ *     int j = 1;
+ *     do {
+ *         std::cout << j << " ";
+ *         j++;
+ *     } while (j <= 3);
+ *     std::cout << std::endl;
+ *     i++;
+ * } while (i <= 2);
+ * ```
+ */
 void ::ControlFlows::nestedLoopExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -173,17 +360,72 @@ void ::ControlFlows::nestedLoopExample() {
   }
 }
 
-//  Break statement:
-//  The break statement has the following two usages in C++ −
-//  When the break statement is encountered inside a loop, the loop is immediately terminated and program control resumes
-//  at the next statement following the loop.
-//  It can be used to terminate a case in the switch statement (covered in the next chapter).
-//  If you are using nested loops (i.e., one loop inside another loop), the break statement will stop the execution of
-//  the innermost loop and start executing the next line of code after the block.
-//  Syntax
-//  The syntax of a break statement in C++ is −
-//  break;
-// see: https://www.tutorialspoint.com/cplusplus/cpp_break_statement.htm
+/**
+ * # Break Statement in C++
+ *
+ * The `break` statement is used to **terminate a loop or switch statement immediately**.
+ * When encountered, program control resumes at the next statement following the loop or switch.
+ *
+ * ---
+ *
+ * ## Usages
+ * 1. **Inside a loop (`for`, `while`, `do…while`)**  
+ *    Stops the execution of the **innermost loop** immediately and continues with the next statement after the loop.
+ *
+ * 2. **Inside a `switch` statement**  
+ *    Terminates the current `case` and exits the switch block.  
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * break;
+ * ```
+ *
+ * ---
+ *
+ * ## Example 1: Using break in a `for` loop
+ *
+ * ```cpp
+ * for (int i = 1; i <= 10; i++) {
+ *     if (i == 5) {
+ *         break; // terminate loop when i is 5
+ *     }
+ *     std::cout << i << " ";
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 1 2 3 4
+ * ```
+ *
+ * ---
+ *
+ * ## Example 2: Using break in a nested loop
+ *
+ * ```cpp
+ * for (int i = 1; i <= 3; i++) {
+ *     for (int j = 1; j <= 3; j++) {
+ *         if (j == 2) break; // stops inner loop only
+ *         std::cout << "(" << i << "," << j << ") ";
+ *     }
+ *     std::cout << std::endl;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * (1,1) 
+ * (2,1) 
+ * (3,1) 
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Break Statement](https://www.tutorialspoint.com/cplusplus/cpp_break_statement.htm)
+ */
 void ::ControlFlows::breakStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -202,14 +444,67 @@ void ::ControlFlows::breakStatementExample() {
   } while (a < 20);
 }
 
-// Continue statement
-// The continue statement works somewhat like the break statement. Instead of forcing termination, however, continue
-// forces the next iteration of the loop to take place, skipping any code in between.
-// For the for loop, continue causes the conditional test and increment portions of the loop to execute. For the while
-// and do...while loops, program control passes to the conditional tests.
-// The syntax of a continue statement in C++ is −
-// continue;
-// see: https://www.tutorialspoint.com/cplusplus/cpp_continue_statement.htm
+/**
+ * # Continue Statement in C++
+ *
+ * The `continue` statement is similar to the `break` statement, but instead of terminating the loop, it **skips
+ * the remaining code in the current iteration** and moves to the **next iteration**.
+ *
+ * ---
+ *
+ * ## Behavior
+ * - **`for` loop:**  
+ *   Executes the **increment** and **conditional test** of the loop immediately after `continue`.
+ *
+ * - **`while` / `do…while` loops:**  
+ *   Control passes to the **conditional test** immediately, skipping the rest of the loop body.
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * continue;
+ * ```
+ *
+ * ---
+ *
+ * ## Example 1: Using continue in a `for` loop
+ *
+ * ```cpp
+ * for (int i = 1; i <= 5; i++) {
+ *     if (i == 3) continue; // skip when i is 3
+ *     std::cout << i << " ";
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 1 2 4 5
+ * ```
+ *
+ * ---
+ *
+ * ## Example 2: Using continue in a `while` loop
+ *
+ * ```cpp
+ * int i = 0;
+ * while (i < 5) {
+ *     i++;
+ *     if (i == 3) continue; // skip printing 3
+ *     std::cout << i << " ";
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 1 2 4 5
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Continue Statement](https://www.tutorialspoint.com/cplusplus/cpp_continue_statement.htm)
+ */
 void ::ControlFlows::continueStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -229,18 +524,58 @@ void ::ControlFlows::continueStatementExample() {
   } while (a < 20);
 }
 
-// Goto statement:
-// A goto statement provides an unconditional jump from the goto to a labeled statement in the same function.
-// NOTE − Use of goto statement is highly discouraged because it makes difficult to trace the control flow of a program,
-// making the program hard to understand and hard to modify. Any program that uses a goto can be rewritten so that it doesn't need the goto.
-// The syntax of a goto statement in C++ is −
-// goto label;
-// ..
-// .
-// label: statement;
-// Where label is an identifier that identifies a labeled statement. A labeled statement is any statement that is preceded
-// by an identifier followed by a colon (:).
-// see: https://www.tutorialspoint.com/cplusplus/cpp_goto_statement.htm
+/**
+ * # Goto Statement in C++
+ *
+ * The `goto` statement provides an **unconditional jump** from the `goto` to a labeled statement in the **same function**.
+ *
+ * ⚠️ **Note:** The use of `goto` is highly discouraged because it makes the program's **control flow difficult to follow**, 
+ * which can make programs **hard to understand and maintain**. Almost any program using `goto` can be rewritten without it.
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * goto label;
+ * ...
+ * label: statement;
+ * ```
+ *
+ * - `label` is an identifier for the labeled statement.  
+ * - A **labeled statement** is any statement preceded by an identifier followed by a colon (`:`).
+ *
+ * ---
+ *
+ * ## Example: Using goto
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int i = 0;
+ * 
+ * start: // label
+ *     cout << i << " ";
+ *     i++;
+ *     if (i < 5) goto start; // jump back to the label
+ *
+ *     cout << "\nDone!" << endl;
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 0 1 2 3 4 
+ * Done!
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Goto Statement](https://www.tutorialspoint.com/cplusplus/cpp_goto_statement.htm)
+ */
 void  ControlFlows::gotoStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -261,18 +596,56 @@ void  ControlFlows::gotoStatementExample() {
   } while (a < 20);
 }
 
-// Conditionals:
-// One of the most important constructs in programming is the ability to execute (or not execute) pieces of code, or
-// execute different pieces of code, depending on the outcome of some decision or question about data. The if-else
-// construct lets us to this in C.
-
-// If Statement:
-// The basic if statement looks like this:
-//
-// if (conditional_expression) {
-//  program_statements;
-// }
-// The program_statements are only executed if the conditional_expression returns a non-zero value, i.e. if it returns a value that is not FALSE (FALSE = zero).
+/**
+ * # Conditional Statements in C++
+ *
+ * One of the most important constructs in programming is the ability to **execute (or skip) pieces of code**, or 
+ * **choose between different pieces of code**, depending on the outcome of a decision or a condition.  
+ * In C++, this is primarily done using **if**, **if-else**, and **switch** statements.
+ *
+ * ---
+ *
+ * ## `if` Statement
+ *
+ * The basic `if` statement looks like this:
+ *
+ * ```cpp
+ * if (conditional_expression) {
+ *     program_statements;
+ * }
+ * ```
+ *
+ * - `program_statements` are executed **only if** `conditional_expression` evaluates to **non-zero (true)**.  
+ * - In C++, **FALSE** is represented by `0`, and **TRUE** is any non-zero value.
+ *
+ * ---
+ *
+ * ## Example 1: Basic if
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int x = 10;
+ *
+ *     if (x > 5) {
+ *         cout << "x is greater than 5" << endl;
+ *     }
+ *
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * x is greater than 5
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ If Statement](https://www.tutorialspoint.com/cplusplus/cpp_if_statement.htm)
+ */
 void ::ControlFlows::ifStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -286,9 +659,55 @@ void ::ControlFlows::ifStatementExample() {
   }
 }
 
-// Else:
-// We can add an else to our if statement, to execute a different code block if the value of the conditional_expression
-// is zero:
+/**
+ * # Else Statement in C++
+ *
+ * We can add an `else` block to an `if` statement to **execute a different code block** if the condition evaluates to **false** (zero).
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * if (conditional_expression) {
+ *     // executed if condition is true (non-zero)
+ *     program_statements;
+ * } else {
+ *     // executed if condition is false (zero)
+ *     alternative_statements;
+ * }
+ * ```
+ *
+ * ---
+ *
+ * ## Example: Using if-else
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int x = 3;
+ *
+ *     if (x > 5) {
+ *         cout << "x is greater than 5" << endl;
+ *     } else {
+ *         cout << "x is not greater than 5" << endl;
+ *     }
+ *
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * x is not greater than 5
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Else Statement](https://www.tutorialspoint.com/cplusplus/cpp_if_statement.htm)
+ */
 void ::ControlFlows::elseStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -304,10 +723,60 @@ void ::ControlFlows::elseStatementExample() {
   }
 }
 
-// Else If
-// You can string together several conditional tests and execute different pieces of code by using the else if construct.
-// Here is a simple program that asks the user to enter an integer, and prints to the screen whether that integer is
-// positive, negative, or zero:
+/**
+ * # Else-If Statement in C++
+ *
+ * The `else if` construct allows you to **string together multiple conditional tests** and execute different pieces of code based on which condition is true.
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * if (condition1) {
+ *     // executed if condition1 is true
+ * } else if (condition2) {
+ *     // executed if condition2 is true
+ * } else {
+ *     // executed if none of the above conditions are true
+ * }
+ * ```
+ *
+ * ---
+ *
+ * ## Example: Checking if a number is positive, negative, or zero
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int number;
+ *     cout << "Enter an integer: ";
+ *     cin >> number;
+ *
+ *     if (number > 0) {
+ *         cout << "The number is positive." << endl;
+ *     } else if (number < 0) {
+ *         cout << "The number is negative." << endl;
+ *     } else {
+ *         cout << "The number is zero." << endl;
+ *     }
+ *
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Sample Output:**
+ * ```
+ * Enter an integer: -7
+ * The number is negative.
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Else-If Statement](https://www.tutorialspoint.com/cplusplus/cpp_if_statement.htm)
+ */
 void ::ControlFlows::elseIfStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -327,11 +796,46 @@ void ::ControlFlows::elseIfStatementExample() {
   }
 }
 
-// The Conditional Operator
-// There is a convenient shorthand for simple if-else constructs, using the so-called conditional operator:
-// condition ? expression1 : expression2
-// It enables you to shorten your code a bit, but that's all. It doesn't give you any additional functionality,
-// it's just a shorthand:
+/**
+ * # Conditional (Ternary) Operator in C++
+ *
+ * The **conditional operator** provides a convenient shorthand for simple `if-else` constructs.  
+ * It has the following syntax:
+ *
+ * ```cpp
+ * condition ? expression1 : expression2
+ * ```
+ *
+ * - If `condition` evaluates to **true**, `expression1` is executed.  
+ * - If `condition` evaluates to **false**, `expression2` is executed.  
+ *
+ * ⚠️ This operator does **not add functionality**; it simply **shortens code**.
+ *
+ * ---
+ *
+ * ## Example: Determine if a number is even or odd
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int num = 7;
+ *     string result = (num % 2 == 0) ? "Even" : "Odd";
+ *     cout << num << " is " << result << endl;
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * 7 is Odd
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Conditional Operator](https://www.tutorialspoint.com/cplusplus/cpp_conditional_operator.htm)
+ */
 void  ControlFlows::conditionalOperatorExample() {
   cout << "" << endl;
   cout << "================================" << endl;
@@ -343,9 +847,72 @@ void  ControlFlows::conditionalOperatorExample() {
   }
 }
 
-// Switch
-// The case of multiple if-else statements strung together to test for different values, and execute different code, is
-// common enough that there is a special construct called the switch statement that is provided for this case:
+/**
+ * # Switch Statement in C++
+ *
+ * When you have **multiple `if-else` statements** that test different values of the same variable,
+ * a `switch` statement can provide a cleaner and more readable solution.
+ *
+ * ---
+ *
+ * ## Syntax
+ *
+ * ```cpp
+ * switch (expression) {
+ *     case value1:
+ *         // statements
+ *         break;
+ *     case value2:
+ *         // statements
+ *         break;
+ *     ...
+ *     default:
+ *         // statements
+ * }
+ * ```
+ *
+ * - `expression` is evaluated once and compared with each `case` value.  
+ * - The `break` statement prevents **fall-through** to the next case.  
+ * - The `default` case is optional and executes if none of the cases match.
+ *
+ * ---
+ *
+ * ## Example: Day of the Week
+ *
+ * ```cpp
+ * #include <iostream>
+ * using namespace std;
+ *
+ * int main() {
+ *     int day = 3;
+ *
+ *     switch (day) {
+ *         case 1:
+ *             cout << "Monday" << endl;
+ *             break;
+ *         case 2:
+ *             cout << "Tuesday" << endl;
+ *             break;
+ *         case 3:
+ *             cout << "Wednesday" << endl;
+ *             break;
+ *         default:
+ *             cout << "Other day" << endl;
+ *     }
+ *
+ *     return 0;
+ * }
+ * ```
+ *
+ * **Output:**
+ * ```
+ * Wednesday
+ * ```
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Switch Statement](https://www.tutorialspoint.com/cplusplus/cpp_switch_statement.htm)
+ */
 void ::ControlFlows::switchStatementExample() {
   cout << "" << endl;
   cout << "================================" << endl;
