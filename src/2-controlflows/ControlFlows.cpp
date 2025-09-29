@@ -80,9 +80,9 @@ void ::ControlFlows::whileLoopExample() {
   cout << "\n\n" << endl;
 
   // another while loop
-  int number = 0;
-  while (number != 999) {
-    cout << "Enter an integer or 999 to stop: " << endl;
+  int number = -1;
+  while (number != 0) {
+    cout << "Enter an integer or 0 to stop: " << endl;
     scanf("%i", &number);
     cout << number << " x 10 = " << number * 10 << endl;
   }
@@ -114,12 +114,12 @@ void ::ControlFlows::doWhileLoopExample() {
   cout << "\n\n" << endl;
 
   // another do-while loop
-  int number = 0;
+  int number = -1;
   do {
     cout << "Enter an integer or 0 to stop: " << endl;
     scanf("%i", &number);
     cout << number << " x 10 = " << number * 10 << endl;
-  } while (number != 999);
+  } while (number != 0);
 }
 
 // Nested loops:
@@ -156,10 +156,20 @@ void ::ControlFlows::nestedLoopExample() {
   cout << "nested loop example" << endl;
   cout << "================================" << endl;
   int i, j;
-  for (i = 2; i < 100; i++) {
-    for (j = 2; j <= (i / j); j++)
-      if (!(i % j)) break; // if factor found, not prime
-    if (j > (i / j)) cout << i << " is prime\n";
+  for (int i = 2; i < 100; ++i) {
+      bool isPrime = true;
+
+      // Only check divisors up to sqrt(i)
+      for (int j = 2; j <= std::sqrt(i); ++j) {
+          if (i % j == 0) {
+              isPrime = false;
+              break;
+          }
+      }
+
+      if (isPrime) {
+          std::cout << i << " is prime\n";
+      }
   }
 }
 
@@ -329,7 +339,6 @@ void  ControlFlows::conditionalOperatorExample() {
   cout << "================================" << endl;
   int i;
   for (i = 1; i <= 10; i++) {
-    (i % 2) ? printf("%d is odd\n", i) : printf("%d is even\n", i);
     (i % 2) ? printf("%d is odd\n", i) : printf("%d is even\n", i);
   }
 }

@@ -1,83 +1,106 @@
 #================================
-# * C++ Sample
+# * C++ Sample Makefile
 #================================
-# Determine the platform
+
+# Detect platform
 UNAME_S := $(shell uname -s)
 
 #================================
-#
+# Compiler and flags
 #================================
 ifeq ($(UNAME_S),Darwin)
   CXX := clang++ -arch x86_64
 else
   CXX := g++
 endif
-CXXFLAGS := -g
-LDFLAGS  :=
-BUILD_DIR    := ./build
-OBJ_DIR  := $(BUILD_DIR)/objects
-APP_DIR  := $(BUILD_DIR)/apps
-TARGET   := program
-INCLUDE  := -I include/
-SRC      := $(shell find src -type f -name *.cpp)
-# SRC      :=                      \
-#    $(wildcard src/helloworld/*.cpp) \
-#    $(wildcard src/datatypes/*.cpp) \
-#    $(wildcard src/*.cpp)         \
 
-OBJECTS := $(SRC:%.cpp=$(OBJ_DIR)/%.o)
+CXXFLAGS := -Wall -Wextra -g
+LDFLAGS  :=
+INCLUDE  := -I include/
 
 #================================
-#
+# Project structure
+#================================
+BUILD_DIR    	:= ./build
+OBJ_DIR  		:= $(BUILD_DIR)/objects
+APP_DIR  		:= $(BUILD_DIR)/apps
+TARGET   		:= app
+SRC      		:= $(shell find src -type f -name *.cpp)
+OBJECTS 		:= $(SRC:%.cpp=$(OBJ_DIR)/%.o)
+
+#================================
+# Default target
+#================================
+all: print clean build $(APP_DIR)/$(TARGET)
+#all: clean build $(APP_DIR)/$(TARGET)
+
+#================================
+# Compilation 
 #================================
 $(OBJ_DIR)/%.o: %.cpp
+	@echo ""
+	@echo "Compiling $< ..."
+	@echo ""
 	@mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS) $(INCLUDE) -o $@ -c $<
 
 #================================
-#
+# Linking
 #================================
 $(APP_DIR)/$(TARGET): $(OBJECTS)
-	@echo "Linking ..."
+	@echo ""
+	@echo "Linking $(TARGET) ..."
+	@echo ""
 	@mkdir -p $(@D)
-	$(CXX) $(CXXFLAGS) $(INCLUDE) $(LDFLAGS) -o $(APP_DIR)/$(TARGET) $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(INCLUDE) $(OBJECTS) $(LDFLAGS) -o $@
 
 #================================
-#
-#================================
-.PHONY: clean
-
-#================================
-#
-#================================
-build:
-	@echo "Building ..."
-	@mkdir -p $(APP_DIR)
-	@mkdir -p $(OBJ_DIR)
-
-#================================
-#
+# Clean build directories
 #================================
 clean:
-	@echo "Cleaning ..."
+	@echo ""
+	@echo "Cleaning build artifacts ..."
+	@echo ""
 	-@rm -rvf $(OBJ_DIR)/*
 	-@rm -rvf $(APP_DIR)/*
 
 #================================
-#
+# Create build directories
 #================================
-print:
-	@echo " SRC: ${SRC}"
-	@echo " OBJECTS: ${OBJECTS}"
-	@echo " BUILD_DIR: ${BUILD_DIR}"
-	@echo " OBJ_DIR: ${OBJ_DIR}"
-	@echo " APP_DIR: ${APP_DIR}"
-	@echo " TARGET: ${TARGET}"
-	@echo " INCLUDE: ${INCLUDE}"
-	@echo " CXXFLAGS: ${CXXFLAGS}"
-	@echo " LDFLAGS: ${LDFLAGS}"
+build:
+	@echo ""
+	@echo "Building ..."
+	@echo ""	
+	@mkdir -p $(APP_DIR)
+	@mkdir -p $(OBJ_DIR)
 
 #================================
-#
+# Print variables
 #================================
-all: print clean build $(APP_DIR)/$(TARGET)
+print:
+	@echo ""
+	@echo "---- Build Variables ----"
+	@echo ""
+	@echo " SRC: ${SRC}"
+	@echo ""
+	@echo " OBJECTS: ${OBJECTS}"
+	@echo ""
+	@echo " BUILD_DIR: ${BUILD_DIR}"
+	@echo ""
+	@echo " OBJ_DIR: ${OBJ_DIR}"
+	@echo ""
+	@echo " APP_DIR: ${APP_DIR}"
+	@echo ""
+	@echo " TARGET: ${TARGET}"
+	@echo ""
+	@echo " INCLUDE: ${INCLUDE}"
+	@echo ""
+	@echo " CXXFLAGS: ${CXXFLAGS}"
+	@echo ""
+	@echo " LDFLAGS: ${LDFLAGS}"
+	@echo ""
+#================================
+# Phony targets
+#================================
+.PHONY: clean
+

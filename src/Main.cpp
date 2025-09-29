@@ -1,16 +1,16 @@
 #include <iostream>
 #include <array>
-#include "datetime/DateTime.hpp"
+#include "0-helloworld/HelloWorld.hpp"
+#include "1-datatypes/DataTypes.hpp"
+#include "2-controlflows/ControlFlows.hpp"
+#include "3-functions/Functions.hpp"
+#include "4-modifiertypes/ModifierTypes.hpp"
+#include "5-numbers/Numbers.hpp"
+#include "6-arrays/Arrays.hpp"
+#include "7-strings/Strings.hpp"
+#include "8-datetime/DateTime.hpp"
 #include "references/References.hpp"
-#include "strings/Strings.hpp"
-#include "arrays/Arrays.hpp"
 #include "pointers/Pointers.hpp"
-#include "numbers/Numbers.hpp"
-#include "modifiertypes/ModifierTypes.hpp"
-#include "functions/Functions.hpp"
-#include "controlflows/ControlFlows.hpp"
-#include "datatypes/DataTypes.hpp"
-#include "helloworld/HelloWorld.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
 int main() {
@@ -92,30 +92,7 @@ int main() {
   numbers.randomNumberExample();
   numbers.randomNumberBetweenMinMaxExample(100,110);
 
-  // Pointers
-  Pointers pointers;
-  pointers.declaringPointerExample();
-  pointers.printVariableAddressExample();
-  pointers.nullPointerExample();
-  pointers.incrementPointerExample();
-  pointers.decrementPointerExample();
-  pointers.pointerComparisonsExample();
-  pointers.arrayOfPointersExample();
-  pointers.arrayOfPointersToCharacterExample();
-  pointers.pointerToPointerExample();
-
-  unsigned long sec;
-  pointers.passingPointersToFunctionsExample(&sec);
-  cout << "Number of seconds :" << sec << endl;
-
-  int *p;
-  p = pointers.returnPointerFromFunctionsExample();
-  for ( int i = 0; i < 10; i++ ) {
-    cout << "*(p + " << i << ") : ";
-    cout << *(p + i) << endl;
-  }
-
-  // Arrays
+    // Arrays
   Arrays arrays;
   arrays.arraysExample();
   arrays.multiDimensionalArraysExample();
@@ -145,6 +122,42 @@ int main() {
   strings.strchrExample();
   strings.strstrExample();
 
+  // Datetime
+  DateTime datetime;
+  datetime.dateTimeFunctionsExample();
+  datetime.timeExample();
+  datetime.ctimeExample();
+  datetime.localtimeExample();
+  datetime.clockExample();
+  datetime.asctimeExample();
+  datetime.gmtimeExample();
+  datetime.mktimeExample();
+  datetime.difftimeExample();
+  datetime.strftimeExample();
+
+  // Pointers
+  Pointers pointers;
+  pointers.declaringPointerExample();
+  pointers.printVariableAddressExample();
+  pointers.nullPointerExample();
+  pointers.incrementPointerExample();
+  pointers.decrementPointerExample();
+  pointers.pointerComparisonsExample();
+  pointers.arrayOfPointersExample();
+  pointers.arrayOfPointersToCharacterExample();
+  pointers.pointerToPointerExample();
+
+  unsigned long sec;
+  pointers.passingPointersToFunctionsExample(&sec);
+  cout << "Number of seconds :" << sec << endl;
+
+  int *p;
+  p = pointers.returnPointerFromFunctionsExample();
+  for ( int i = 0; i < 10; i++ ) {
+    cout << "*(p + " << i << ") : ";
+    cout << *(p + i) << endl;
+  }
+
   // References
   References references;
   references.declaringReferenceExample();
@@ -164,18 +177,7 @@ int main() {
   references.returnReferenceFromFunctionExample(vals, 0) = 36.9;
   cout << vals[0] << endl;
 
-  // Datetime
-  DateTime datetime;
-  datetime.dateTimeFunctionsExample();
-  datetime.timeExample();
-  datetime.ctimeExample();
-  datetime.localtimeExample();
-  datetime.clockExample();
-  datetime.asctimeExample();
-  datetime.gmtimeExample();
-  datetime.mktimeExample();
-  datetime.difftimeExample();
-  datetime.strftimeExample();
+
 
   return 0;
 }

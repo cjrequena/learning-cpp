@@ -2,10 +2,6 @@
 // Created by carlosjose.requena on 21/08/2019.
 //
 
-#include <iostream>
-#include "StorageClasses.hpp"
-using namespace std;
-
 // see: https://www.tutorialspoint.com/cplusplus/cpp_storage_classes.htm
 
 //  A storage class defines the scope (visibility) and life-time of variables and/or functions within a C++ Program.
@@ -62,6 +58,10 @@ using namespace std;
 //  The mutable Storage Class
 //  The mutable specifier applies only to class objects,. It allows a member of an object to override const member function.
 //  That is, a mutable member can be modified by a const member function.
+
+#include <iostream>
+#include "StorageClasses.hpp"
+using namespace std;
 
 StorageClasses::StorageClasses() {
   cout << "\n" << endl;
