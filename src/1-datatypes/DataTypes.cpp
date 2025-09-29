@@ -156,26 +156,26 @@ void DataTypes::printIntegerRepresentations() {
 }
 
 
-//Character Constants
-//A character constant is written between single quotes, for example, 'x'. Characters in C are represented using integer
+// Character Constants
+// A character constant is written between single quotes, for example, 'x'. Characters in C are represented using integer
 // values, from the ASCII character set. ASCII codes range between 0 and 255. The upper-case alphabet starts at 65 (A)
 // and ends at 90 (Z); the lowercase alphabet starts at 97 (a) and ends at 122 (z). Other symbols such as ç
 // (, !, tab, carriage return, etc, are also represented in the ASCII table.
-//An important character constant to know about is the constant '\0' which represents the character with value zero,
+// An important character constant to know about is the constant '\0' which represents the character with value zero,
 // sometimes called the NULL character. We will see later when we talk about string handling in C that '\0' is used to
 // terminate variable-length strings.
 
 
-//String Constants
-//String constants can be specified using a sequence of zero or more characters enclosed within double quotes, e.g. "C is fun".
+// String Constants
+// String constants can be specified using a sequence of zero or more characters enclosed within double quotes, e.g. "C is fun".
 // A string constant is technically an array of characters that is terminated by a null character '\0' at the end.
 // This means that the storage required to represent a string of length n is actually n+1. Thus we can store strings of
 // arbitrary length in memory as long as they are terminated by a null character (so we know when they stop).
 
 
-//Enumeration Constants:
-//An enumeration constant is a list of constant integer values, that you can assign to arbitrary labels. They provide a
-//convenient way to associate constant values with names. For example you could store the months of the year like this:
+// Enumeration Constants:
+// An enumeration constant is a list of constant integer values, that you can assign to arbitrary labels. They provide a
+// convenient way to associate constant values with names. For example you could store the months of the year like this:
 void DataTypes::printEnumerationConstants() {
     cout << "" << endl;
     cout << "================================" << endl;
@@ -275,13 +275,13 @@ void ::DataTypes::arithmeticOperatorsExample() {
     << endl;
 }
 
-//Relational and Logical Operators
-//The relational operators are >, >=, < and <=, which all have equal precedence. There are also two equality operators: == and !=.
-//There are two logical operators && (logical AND) and || (logical OR).
+// Relational and Logical Operators
+// The relational operators are >, >=, < and <=, which all have equal precedence. There are also two equality operators: == and !=.
+// There are two logical operators && (logical AND) and || (logical OR).
 // By default in C, the results of relational and logical operators are evaluated to integer values: 0 for FALSE and 1 for TRUE.
 
-//Increment and Decrement Operators
-//You may come across two unusual-looking operators that may be used as a shorthand for incrementing and decrementing
+// Increment and Decrement Operators
+// You may come across two unusual-looking operators that may be used as a shorthand for incrementing and decrementing
 // variables. The ++ and -- operators add 1 and subtract 1, respectively, from their operands. For example in the following
 // code snippet, we increment the int variable a and we decrement the int variable b:
 void DataTypes::incrementAndDecrementVariableExample() {
@@ -313,15 +313,15 @@ void DataTypes::incrementAndDecrementVariableExample() {
 // Type Conversions
 // There are two kinds of type conversion we need to talk about: automatic or implicit type conversion and explicit type conversion.
 
-//Implicit Type Conversion
-//The operators we have looked at can deal with different types. For example we can apply the addition operator + to an
+// Implicit Type Conversion
+// The operators we have looked at can deal with different types. For example we can apply the addition operator + to an
 // int as well as a double. It is important to understand how operators deal with different types that appear in the same expression.
 // There are rules in C that govern how operators convert different types, to evaluate the results of expressions.
 
-//For example, when a floating-point number is assigned to an integer value in C, the decimal portion of the number gets truncated.
+// For example, when a floating-point number is assigned to an integer value in C, the decimal portion of the number gets truncated.
 // On the other hand, when an integer value is assigned to a floating-point variable, the decimal is assumed as .0.
 
-//This sort of implicit or automatic conversion can produce nasty bugs that are difficult to find, especially for example
+// This sort of implicit or automatic conversion can produce nasty bugs that are difficult to find, especially for example
 // when performing multiplication or division using mixed types, e.g. integer and floating-point values. Here is some example
 // code illustrating some of these effects:
 void::DataTypes::typeConversionsExample() {
