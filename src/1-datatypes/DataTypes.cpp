@@ -1,16 +1,108 @@
-//
-// Created by Carlos José Requena Jiménez on 2019-08-05.
-//
-// see https://www.programarya.com/Cursos/C++/Sistema-de-Tipos
-// see https://www.gribblelab.org/CBootCamp/3_Basic_Types_Operators_And_Expressions.html
-
-#include <stdio.h>
 #include <iostream>
 #include <sstream>
 #include <iomanip>
 #include "DataTypes.hpp"
-
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
+
+/**
+ * # C++ Data Types
+ *
+ * While writing programs in C++, you use **variables** to store data.
+ * The choice of **data type** determines the memory size allocated and the operations allowed.
+ *
+ * ---
+ *
+ * ## 1. Primitive (Built-in) Types
+ *
+ * C++ provides a set of primitive types, often with modifiers (`signed`, `unsigned`, `short`, `long`).
+ *
+ * | Type        | Keyword         | Typical Size* | Typical Range* | Notes |
+ * |-------------|-----------------|----------------|----------------|-------|
+ * | Boolean     | `bool`          | 1 byte         | true / false   |       |
+ * | Character   | `char`          | 1 byte         | −127 to 127 or 0 to 255 | `signed` / `unsigned` variants |
+ * | Integer     | `int`           | 4 bytes        | −2,147,483,648 to 2,147,483,647 | with modifiers |
+ * | Float       | `float`         | 4 bytes        | ~±3.4e−38 to ±3.4e+38 | single precision |
+ * | Double      | `double`        | 8 bytes        | ~±1.7e−308 to ±1.7e+308 | double precision |
+ * | Long Double | `long double`   | 12 bytes       | compiler-dependent | extended precision |
+ *
+ * > *Sizes and ranges vary by compiler/system.*
+ *
+ * ### Example
+ * ```cpp
+ * cout << "Size of int: " << sizeof(int) << endl;
+ * ```
+ *
+ * ---
+ *
+ * ## 2. Derived Data Types
+ *
+ * Derived types are constructed from primitive ones:
+ *
+ * - **Function**
+ * - **Array**
+ * - **Pointer**
+ * - **Reference**
+ *
+ * ### Example: Pointer
+ * ```cpp
+ * int a = 20;
+ * int* p = &a;
+ * cout << "Address: " << p << ", Value: " << *p << endl;
+ * ```
+ *
+ * ---
+ *
+ * ## 3. User-Defined Data Types
+ *
+ * C++ lets programmers create their own types:
+ *
+ * - **Class**
+ * - **Struct**
+ * - **Union**
+ * - **Enum**
+ * - **typedef / using**
+ *
+ * ### Example: Class
+ * ```cpp
+ * class TP {
+ * public:
+ *     string msg;
+ *     void print() { cout << msg << endl; }
+ * };
+ * ```
+ *
+ * ### Example: Enum
+ * ```cpp
+ * enum TP { C, Java, Python, Ruby, Kotlin };
+ * TP course = Kotlin;  // course = 4
+ * ```
+ *
+ * ### Example: Union
+ * ```cpp
+ * union TP {
+ *     int tp1;
+ *     int tp2;
+ * };
+ *
+ * TP t;
+ * t.tp1 = 2;
+ * cout << "tp1: " << t.tp1 << endl;
+ * t.tp2 = 4;  // overwrites tp1
+ * cout << "After changing tp2, tp1: " << t.tp1 << endl;
+ * ```
+ *
+ * ---
+ *
+ * ## 4. Categories Summary
+ *
+ * 1. **Primitive** — built-in types (`int`, `float`, `char`, …)
+ * 2. **Derived** — built from primitive types (array, pointer, reference, function)
+ * 3. **User-Defined** — programmer defined (`class`, `struct`, `union`, `enum`, `typedef`)
+ *
+ * ---
+ *
+ * 📖 See also: [Tutorialspoint — C++ Data Types](https://www.tutorialspoint.com/cplusplus/cpp_data_types.htm)
+ */
 
 DataTypes::DataTypes() {
   cout << "\n" << endl;
@@ -43,13 +135,12 @@ void DataTypes::printDataTypes() {
 }
 
 // Constants:
-// Constants are values that that do not change after they have been defined.
+// Constants are values that do not change after they have been defined.
 
 // Numeric Constants
 //An example of an int constant is the number 1234. An example of a floating-point constant (by default typed as a double)
 // is 123.4 and 1e-2. We can write numbers in octal or hexadecimal instead of decimal: octal by using a leading zero (0)
 // and hexadecimal by using a leading zero-x (0x). Decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hexadecimal.
-
 // Here is some code to show how to print integers in various representations.
 void DataTypes::printIntegerRepresentations() {
     cout << "" << endl;
