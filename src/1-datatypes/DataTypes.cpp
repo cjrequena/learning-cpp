@@ -138,7 +138,7 @@ void DataTypes::printDataTypes() {
 // Constants are values that do not change after they have been defined.
 
 // Numeric Constants
-//An example of an int constant is the number 1234. An example of a floating-point constant (by default typed as a double)
+// An example of an int constant is the number 1234. An example of a floating-point constant (by default typed as a double)
 // is 123.4 and 1e-2. We can write numbers in octal or hexadecimal instead of decimal: octal by using a leading zero (0)
 // and hexadecimal by using a leading zero-x (0x). Decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hexadecimal.
 // Here is some code to show how to print integers in various representations.
