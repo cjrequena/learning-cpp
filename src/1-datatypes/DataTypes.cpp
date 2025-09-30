@@ -4,7 +4,7 @@
 #include "DataTypes.hpp"
 using namespace std; // this is a using directive telling the compiler to check the std namespace when resolving identifiers with no prefix
 
-/**
+/*
  * # C++ Data Types
  *
  * While writing programs in C++, you use **variables** to store data.
@@ -167,7 +167,7 @@ void DataTypes::printIntegerRepresentations() {
 
 
 // String Constants
-// String constants can be specified using a sequence of zero or more characters enclosed within double quotes, e.g. "C is fun".
+// String constant can be specified using a sequence of zero or more characters enclosed within double quotes, e.g. "C is fun".
 // A string constant is technically an array of characters that is terminated by a null character '\0' at the end.
 // This means that the storage required to represent a string of length n is actually n+1. Thus we can store strings of
 // arbitrary length in memory as long as they are terminated by a null character (so we know when they stop).
@@ -390,8 +390,8 @@ void::DataTypes::stringConversionExample() {
     int a = 2;
     double b = 3.14;
     char myString1[64], myString2[64];
-    sprintf(myString1, "%d", a);
-    sprintf(myString2, "%.2f", b);
+    printf(myString1, "%d", a);
+    printf(myString2, "%.2f", b);
     printf("a=%d, b=%.2f\n", a, b);
     printf("myString1=%s, myString2=%s\n\n", myString1, myString2);
 
@@ -401,7 +401,7 @@ void::DataTypes::stringConversionExample() {
     const int MAX_BUFFER_SIZE = 1000;
     char out_string [MAX_BUFFER_SIZE];
     int number = 123;
-    sprintf(out_string, "%s%d", base_string, number);
+    printf(out_string, "%s%d", base_string, number);
     printf("out_string = %s\n\n", out_string);
 
     // C++ Way

@@ -7,15 +7,15 @@
 
 class DataTypes {
  public:
-  void printDataTypes();
-  void printIntegerRepresentations();
-  void printEnumerationConstants();
-  void printDeclarations();
-  void arithmeticOperatorsExample();
-  void incrementAndDecrementVariableExample();
-  void typeConversionsExample();
-  void typeCastingExample();
-  void stringConversionExample();
+  static  void printDataTypes();
+  static  void printIntegerRepresentations();
+  static  void printEnumerationConstants();
+  static  void printDeclarations();
+  static  void arithmeticOperatorsExample();
+  static  void incrementAndDecrementVariableExample();
+  static  void typeConversionsExample();
+  static  void typeCastingExample();
+  static  void stringConversionExample();
   DataTypes();
   ~DataTypes();
 };
