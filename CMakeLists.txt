@@ -4,10 +4,10 @@ project(learning-cpp)
 set(CMAKE_CXX_STANDARD 17)
 
 #include_directories(build)
-#include_directories(doc)
+#include_directories(docs)
 #include_directories(include)
 include_directories(src)
-include_directories(test)
+include_directories(tests)
 
 add_executable(
         learning_cpp

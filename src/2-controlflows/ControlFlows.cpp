@@ -178,7 +178,7 @@ void ::ControlFlows::whileLoopExample() {
  * The **do…while loop** is a variant of the while-loop that **reverses the order** of execution:
  * the loop body executes first, and the condition is checked afterward.
  *
- * Unlike `for` and `while` loops, which test the loop condition at the **top** of the loop, 
+ * Unlike `for` and `while` loops, which tests the loop condition at the **top** of the loop,
  * a `do…while` loop checks its condition at the **bottom**.  
  * This guarantees that the loop body executes **at least once**, even if the condition is initially false.
  *
@@ -454,10 +454,10 @@ void ::ControlFlows::breakStatementExample() {
  *
  * ## Behavior
  * - **`for` loop:**  
- *   Executes the **increment** and **conditional test** of the loop immediately after `continue`.
+ *   Executes the **increment** and **conditional tests** of the loop immediately after `continue`.
  *
  * - **`while` / `do…while` loops:**  
- *   Control passes to the **conditional test** immediately, skipping the rest of the loop body.
+ *   Control passes to the **conditional tests** immediately, skipping the rest of the loop body.
  *
  * ---
  *
@@ -850,7 +850,7 @@ void  ControlFlows::conditionalOperatorExample() {
 /**
  * # Switch Statement in C++
  *
- * When you have **multiple `if-else` statements** that test different values of the same variable,
+ * When you have **multiple `if-else` statements** that tests different values of the same variable,
  * a `switch` statement can provide a cleaner and more readable solution.
  *
  * ---
