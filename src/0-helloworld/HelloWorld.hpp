@@ -7,7 +7,7 @@
 
 class HelloWorld {
  public:
-  static void helloWorld();
+  static void sayHelloWorld();
   HelloWorld();
   ~HelloWorld();
 };

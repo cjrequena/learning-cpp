@@ -14,7 +14,7 @@ else
   CXX := g++
 endif
 
-CXXFLAGS := -Wall -Wextra -g
+CXXFLAGS = -std=c++23 -Wall -Wextra -O2
 LDFLAGS  :=
 INCLUDE  := -I include/
 

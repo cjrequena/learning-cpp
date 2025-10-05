@@ -1,11 +1,8 @@
-cmake_minimum_required(VERSION 3.14)
-project(learning-cpp)
+cmake_minimum_required(VERSION 4.0)
+project(learning_cpp)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 23)
 
-#include_directories(build)
-#include_directories(docs)
-#include_directories(include)
 include_directories(src)
 include_directories(tests)
 
@@ -33,9 +30,6 @@ add_executable(
         
         src/6-arrays/Arrays.cpp
         src/6-arrays/Arrays.hpp
-
-        src/7-strings/Strings.cpp
-        src/7-strings/Strings.hpp
 
         src/7-strings/Strings.cpp
         src/7-strings/Strings.hpp

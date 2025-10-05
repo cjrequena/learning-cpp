@@ -49,14 +49,14 @@ using namespace std; // this is a using directive telling the compiler to check 
  * ```
  */
 
-void HelloWorld::helloWorld() {
+void HelloWorld::sayHelloWorld() {
   cout << "\n" << endl;
-  cout << "================================" << endl;
-  cout << "helloWorld example" << endl;
-  cout << "================================" << endl;
   std::cout << "Hello, World!" << std::endl;
 }
 
+/**
+ * Constructor
+ */
 HelloWorld::HelloWorld() {
   cout << "\n" << endl;
   cout << "================================" << endl;
@@ -64,6 +64,9 @@ HelloWorld::HelloWorld() {
   cout << "================================" << endl;
 }
 
+/**
+ * Destructor
+ */
 HelloWorld::~HelloWorld() {
   cout << "\n" << endl;
   cout << "================================" << endl;

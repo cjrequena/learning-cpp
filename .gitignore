@@ -37,6 +37,11 @@ bin/**
 
 # CMake
 cmake-build-debug/**
+CMakeFiles/
+CMakeScripts/
+cmake-build-*/
+CMakeCache.txt
+cmake_install.cmake
 
 # IntelliJ Idea
 idea/
