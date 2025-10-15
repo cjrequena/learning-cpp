@@ -48,5 +48,7 @@ add_executable(
 
         src/storageclasses/StorageClasses.cpp
         src/storageclasses/StorageClasses.hpp
+        src/files/files.cpp
+        src/files/files.h
 
 )
