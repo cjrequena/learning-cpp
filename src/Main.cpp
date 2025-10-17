@@ -3,23 +3,17 @@
 //
 #include <iostream>
 #include "0-helloworld/HelloWorld.hpp"
+#include "1-datatypes/DataTypes.hpp"
+#include "9-operators/Operators.hpp"
 #include "files/Files.h"
 
 using namespace std;
 
 int main() {
-    HelloWorld helloWorld;
-    helloWorld.sayHelloWorld();
+    DataTypes data_types;
+    data_types.printDataTypes();
 
-    //------------------------------------------------------------------------------------------------------------------
-
-    Files files;
-    files.fstreamWriteOnNewFile();
-    files.fstreamAppendOnExistingFile();
-    files.fstreamReadOnExistingFile();
-    files.ofstreamWriteOnNewFile();
-    files.ofstreamAppendOnExistingFile();
-    files.ifstreamReadOnExistingFile();
-
+    Operators operators;
+    operators.incrementDecrementOperatorsExample();
     return 0;
 }
