@@ -1,10 +1,12 @@
 // // ============================================================================
 // // main.cpp
 // // ============================================================================
+// // gcc -std=c++23 -Wall -Wextra -O2 *.cpp -o main
+// // gcc -std=c++17 -Wall -Wextra -O2 *.cpp -o main
+//
 // #include <iostream>
-// #include "designpatterns/registry/CommandHandlerRegistry.hpp"
-// #include "designpatterns/registry/CommandHandler.hpp"
-// #include "designpatterns/registry/HelloCommandHandler.hpp"
+// #include "CommandHandlerRegistry.hpp"
+// #include "CommandHandler.hpp"
 //
 // /**
 //  * @brief Main function demonstrating the Command Handler Registry.
