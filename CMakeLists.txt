@@ -51,4 +51,13 @@ add_executable(
         src/files/files.cpp
         src/files/files.h
 
+        src/designpatterns/registry/CommandHandler.cpp
+        src/designpatterns/registry/CommandHandler.hpp
+        src/designpatterns/registry/CommandHandlerRegistry.cpp
+        src/designpatterns/registry/CommandHandlerRegistry.hpp
+        src/designpatterns/registry/HelloCommandHandler.cpp
+        src/designpatterns/registry/HelloCommandHandler.hpp
+        src/designpatterns/registry/GoodbyeCommandHandler.cpp
+        src/designpatterns/registry/GoodbyeCommandHandler.hpp
+
 )

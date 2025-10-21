@@ -1,6 +1,3 @@
-//
-// Created by Carlos José Requena Jiménez on 5/10/25.
-//
 #include <iostream>
 #include "0-helloworld/HelloWorld.hpp"
 #include "1-datatypes/DataTypes.hpp"
